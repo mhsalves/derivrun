@@ -14,6 +14,7 @@ public class PlayerBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.animator = GetComponent<Animator> ();
+		this.Andar ();
 
 	}
 	
