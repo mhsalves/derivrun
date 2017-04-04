@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f644d49c92f774c79a5bd74cea195061
+timeCreated: 1491265306
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Neo Sans Std
+  fontNames:
+  - Neo Sans Std
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8d253b18908194867b46e15dd3a044be, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
