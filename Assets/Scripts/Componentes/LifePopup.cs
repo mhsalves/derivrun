@@ -7,36 +7,40 @@ namespace Componentes {
 	public class LifePopup : MonoBehaviour {
 
 		public List<LifePopupItem> listHearts;
-		private int quantidade = 1;
+		private LifeController lifeController;
 
-		public int GetQuantidade() {
-			return quantidade;
-		}
+		public GameObject mainContent;
 
 		void Start() {
-			AplicarQuantidade (1);
+
+			this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
+			this.AtualizarDesenho ();
 
 		}
-
-		public ScreenController screenController;
 
 		public void AplicarQuantidade (int quantidade) {
 
-			this.quantidade = (quantidade < 1) ? 1 : (quantidade > 10) ? 10 : quantidade;
-
-			foreach (LifePopupItem lpi in listHearts) {
-				lpi.Apagar ();
-			}
-
-			for (int i = 0; i < this.quantidade; i++) {
-				this.listHearts[i].Acender();
-			}
+			this.lifeController.IniciarCom (quantidade);
+			this.AtualizarDesenho ();
 
 		}
 
-		public void ComeçarJogo() {
-			//TODO: Mandar a quantidade de vidas para o scene de GAME
-			screenController.AbrirGame ();
+		public void Show() {
+
+			this.mainContent.SetActive (true);
+			this.AtualizarDesenho ();
+		}
+
+		private void AtualizarDesenho(){
+			
+			for (int i = 0; i < this.lifeController.GetVidas(); i++) {
+				this.listHearts[i].Acender();
+			}
+
+			for (int i = this.lifeController.GetVidas (); i < LifeController.maxVidas; i++) {
+				this.listHearts[i].Apagar();
+			}
+
 		}
 
 	}
