@@ -20,18 +20,22 @@ public class GameController : MonoBehaviour {
 	public int nScore = 0;
 	public Text tLifes;
 
+	public SpawnBlocoScript spawnInicialIsolado;
+
 
 	// Use this for initialization
 	void Start () {
 
-		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
+		//this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
 
 		var data = equationsResources.SelecionarDataAleatoria ();
 		equationsArea.Carregar (data);
 
 		tQuestion.text = "" + nQuestion;
 		tScore.text = "" + nScore;
-		tLifes.text = "" + this.lifeController.GetVidas ();
+		//tLifes.text = "" + this.lifeController.GetVidas ();
+
+		spawnInicialIsolado.IniciarInvocacao ();
 
 	}
 	

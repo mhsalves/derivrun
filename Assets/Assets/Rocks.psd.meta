@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 205cc09754ed6403abcc72da0a1ed115
-timeCreated: 1491423360
+guid: c982a1d4321d74fbfb11ca5b0ce51bea
+timeCreated: 1491426216
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: trees_0
-    21300002: trees_1
-    21300004: trees_2
-    21300006: trees_3
+    21300000: Rocks_0
+    21300002: Rocks_1
+    21300004: Rocks_2
+    21300006: Rocks_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -90,7 +90,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: trees_0
+      name: Rocks_0
       rect:
         serializedVersion: 2
         x: 0
@@ -103,7 +103,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: trees_1
+      name: Rocks_1
       rect:
         serializedVersion: 2
         x: 67
@@ -116,7 +116,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: trees_2
+      name: Rocks_2
       rect:
         serializedVersion: 2
         x: 0
@@ -129,7 +129,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: trees_3
+      name: Rocks_3
       rect:
         serializedVersion: 2
         x: 67
