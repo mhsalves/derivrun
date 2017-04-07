@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour {
 
 	public float speed;
-	private static string animWalk = "Walk";
-	private static string animPower = "Power";
+
+	private static string animWalk = "Correr";
+	private static string animPower = "Poder";
 	private static string animJump = "Jump";
 
 	private Animator animator;
@@ -14,7 +15,6 @@ public class PlayerBehavior : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.animator = GetComponent<Animator> ();
-		this.Andar ();
 
 	}
 	
