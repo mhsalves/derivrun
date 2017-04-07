@@ -21,6 +21,9 @@ public class GameController : MonoBehaviour {
 	public Text tLifes;
 
 	public SpawnBlocoScript spawnInicialIsolado;
+	public CameraBehavior cameraBehavior;
+	public PlayerBehavior player;
+	public ContadorInicial contadorInicial;
 
 
 	// Use this for initialization
@@ -36,11 +39,22 @@ public class GameController : MonoBehaviour {
 		//tLifes.text = "" + this.lifeController.GetVidas ();
 
 		spawnInicialIsolado.IniciarInvocacao ();
+		contadorInicial.Comecar ();
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
+	}
+
+	public void Iniciar() {
+
+		//Começar a mexer camera
+		cameraBehavior.mexer = true;
+		player.Andar ();
 
 
 
