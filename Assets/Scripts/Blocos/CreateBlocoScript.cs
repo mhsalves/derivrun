@@ -11,7 +11,7 @@ public class CreateBlocoScript : MonoBehaviour {
 			var ss = other.GetComponent<SpawnBlocoScript> ();
 			ss.IniciarInvocacao ();
 
-			print ("Triggered Create");
+			//print ("Triggered Create");
 
 		}
 

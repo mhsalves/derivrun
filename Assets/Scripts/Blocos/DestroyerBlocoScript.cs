@@ -11,20 +11,15 @@ public class DestroyerBlocoScript : MonoBehaviour {
 			return;
 		} 
 
-		if (other.tag == "LineMap") {
+		if (other.tag == "LineMap" || other.tag == "PointSpawnBlock" ) {
 			var parent = other.transform.parent;
 			Destroy (other.gameObject);
 
-			//print (parent.childCount);
-
-			if (parent.childCount == 2) { //Inclui o SpawnPoint + other ainda não eliminado
+			if (parent != null && parent.childCount == 1) {
 				Destroy (parent.gameObject);
 			}
-
 		}
-
-		//print ("Triggered Destroyer");
-
+	
 	}
 
 }
