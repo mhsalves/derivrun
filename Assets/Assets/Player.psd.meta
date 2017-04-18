@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c6a60b9677264494887638534f1fe1c3
-timeCreated: 1491520050
+timeCreated: 1492620396
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -29,8 +29,8 @@ TextureImporter:
     21300044: Player_wait_0
     21300046: Player_wait_1
     21300048: Player_4
-    21300050: Player_8
-    21300052: Player_9
+    21300050: Player_jumpside_3
+    21300052: Player_jumpside_4
     21300054: Player_14
     21300056: Player_17
   serializedVersion: 4
@@ -219,7 +219,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_8
+      name: Player_jumpside_3
       rect:
         serializedVersion: 2
         x: 720
@@ -227,12 +227,12 @@ TextureImporter:
         width: 240
         height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_9
+      name: Player_jumpside_4
       rect:
         serializedVersion: 2
         x: 960
@@ -240,7 +240,7 @@ TextureImporter:
         width: 240
         height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -305,7 +305,7 @@ TextureImporter:
         width: 240
         height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -344,7 +344,7 @@ TextureImporter:
         width: 240
         height: 240
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
