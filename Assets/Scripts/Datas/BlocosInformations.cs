@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilitarios;
 
-public class DataBlocos : MonoBehaviour {
+public class BlocosInformations : MonoBehaviour {
 
 	public enum MarkerType {
 		FLORESTA, DESERTO
@@ -42,13 +42,10 @@ public class DataBlocos : MonoBehaviour {
 		switch (marker) {
 		case MarkerType.FLORESTA:
 			return faseFloresta;
-			break;
 		case MarkerType.DESERTO:
 			return faseDeserto;
-			break;
 		default:
 			return faseFloresta;
-			break;
 		}
 	}
 

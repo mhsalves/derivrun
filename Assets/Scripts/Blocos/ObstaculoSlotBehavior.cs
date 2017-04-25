@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ObstaculoSlotBehavior : MonoBehaviour {
 
-	public DataBlocos dataBlocos;
-	public DataBlocos.MarkerType marker;
+	public BlocosInformations dataBlocos;
+	public BlocosInformations.MarkerType marker;
 
 	public void Spawn() {
 		var obj = dataBlocos.GetFaseByMarker (this.marker).SelecionarObstaculoAleatorio();

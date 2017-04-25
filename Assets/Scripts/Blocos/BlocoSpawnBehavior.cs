@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnBlocoScript : MonoBehaviour {
+public class BlocoSpawnBehavior : MonoBehaviour {
 	
 	public int childAhead = 0;
 	private bool spawned = false;
 
-	public DataBlocos dataBlocos;
+	public BlocosInformations dataBlocos;
 	public bool cleaned = false;
 
 	private void Spawn( bool resposta ) {
@@ -18,7 +18,7 @@ public class SpawnBlocoScript : MonoBehaviour {
 			pos.z = 0f;
 
 			GameObject go = (GameObject) Instantiate (obj, pos, Quaternion.identity);
-			var ss = go.transform.Find ("SpawnPoint").GetComponent<SpawnBlocoScript> ();
+			var ss = go.transform.Find ("SpawnPoint").GetComponent<BlocoSpawnBehavior> ();
 
 			if (childAhead > 0) {
 				ss.childAhead = childAhead - 1;

@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour {
 	public int nScore = 0;
 	public Text tLifes;
 
-	public SpawnBlocoScript spawnInicialIsolado;
+	public BlocoSpawnBehavior spawnInicialIsolado;
 	public CameraBehavior cameraBehavior;
 	public PlayerBehavior player;
 	public ContadorInicial contadorInicial;

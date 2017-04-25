@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateBlocoScript : MonoBehaviour {
+public class CreateBlocoTrigger : MonoBehaviour {
 
 	public GameController gameController;
 	private int contadorResposta = 5; //Quantidade de blocos para aparecer o Bloco de Respostas
@@ -12,7 +12,7 @@ public class CreateBlocoScript : MonoBehaviour {
 		if (other.tag == "PointSpawnBlock") {
 
 			gameController.contadorDeBlocos++;
-			var ss = other.GetComponent<SpawnBlocoScript> ();
+			var ss = other.GetComponent<BlocoSpawnBehavior> ();
 
 			if (gameController.contadorDeBlocos == contadorResposta) {
 				ss.InvocarResposta ();

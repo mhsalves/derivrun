@@ -99,7 +99,7 @@ public class PlayerBehavior : MonoBehaviour {
 		
 		if (other.tag == "LimitSide") {
 			
-			var lsb = other.GetComponent<LimitSideBehavior> ();
+			var lsb = other.GetComponent<LimiteLateralBehavior> ();
 
 			if (!lsb.toDireita) {
 				podeMoverPraDireita = false;
