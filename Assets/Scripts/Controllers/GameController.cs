@@ -25,19 +25,21 @@ public class GameController : MonoBehaviour {
 	public PlayerBehavior player;
 	public ContadorInicial contadorInicial;
 
+	public int contadorDeBlocos = 0;
 
 	// Use this for initialization
 	void Start () {
 
-		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
+//		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
 
 		var data = equationsResources.SelecionarDataAleatoria ();
 		equationsArea.Carregar (data);
 
 		tQuestion.text = "" + nQuestion;
 		tScore.text = "" + nScore;
-		tLifes.text = "" + this.lifeController.GetVidas ();
+//		tLifes.text = "" + this.lifeController.GetVidas ();
 
+		spawnInicialIsolado.cleaned = true;
 		spawnInicialIsolado.IniciarInvocacao ();
 		contadorInicial.Comecar ();
 

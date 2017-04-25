@@ -8,13 +8,12 @@ public class SpawnBlocoScript : MonoBehaviour {
 	private bool spawned = false;
 
 	public DataBlocos dataBlocos;
+	public bool cleaned = false;
 
-	private void Spawn() {
-
-		//print ("Spawn");
+	private void Spawn( bool resposta ) {
 
 		if (!spawned) {
-			var obj = dataBlocos.GetFaseAtual ().blockCleaned;
+			var obj = (cleaned) ? dataBlocos.GetFaseAtual ().blockCleaned : (resposta) ? dataBlocos.GetFaseAtual().blockAnswer : dataBlocos.GetFaseAtual().SelecionarBlocoAleatorio();
 			var pos = transform.position;
 			pos.z = 0f;
 
@@ -34,7 +33,11 @@ public class SpawnBlocoScript : MonoBehaviour {
 
 
 	public void IniciarInvocacao() {
-		Spawn ();
+		Spawn (false);
+	}
+
+	public void InvocarResposta() {
+		Spawn (true);	
 	}
 
 }
