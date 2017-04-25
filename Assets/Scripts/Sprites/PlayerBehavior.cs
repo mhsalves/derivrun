@@ -72,7 +72,7 @@ public class PlayerBehavior : MonoBehaviour {
 			var newSX = Mathf.Abs (this.transform.localScale.x) * dir;
 			var toScale = new Vector3 (newSX, this.transform.localScale.y);
 
-			print (movementDir);
+			//print (movementDir);
 
 			if (
 				(movementDir == MovementDirection.DIREITA && podeMoverPraDireita) ||
@@ -107,7 +107,7 @@ public class PlayerBehavior : MonoBehaviour {
 				podeMoverPraEsquerda = false;
 			}
 
-		}
+		} 
 
 	}
 

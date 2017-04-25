@@ -13,6 +13,10 @@ public class LifeController : MonoBehaviour {
 		return vidas;
 	}
 
+	public int GetVidasCorrente () {
+		return vidasCorrente;
+	}
+
 	// Use this for initialization
 	void Start () {
 		DontDestroyOnLoad (gameObject);

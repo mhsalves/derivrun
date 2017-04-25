@@ -8,12 +8,15 @@ public class BlocoSpawnBehavior : MonoBehaviour {
 	private bool spawned = false;
 
 	public BlocosInformations dataBlocos;
-	public bool cleaned = false;
 
-	private void Spawn( bool resposta ) {
+	public enum TipoBloco {
+		LIMPO, NORMAL, RESPOSTA
+	}
+
+	private void Spawn( TipoBloco tipo ) {
 
 		if (!spawned) {
-			var obj = (cleaned) ? dataBlocos.GetFaseAtual ().blockCleaned : (resposta) ? dataBlocos.GetFaseAtual().blockAnswer : dataBlocos.GetFaseAtual().SelecionarBlocoAleatorio();
+			var obj = (tipo == TipoBloco.LIMPO) ? dataBlocos.GetFaseAtual ().blockCleaned : (tipo == TipoBloco.RESPOSTA) ? dataBlocos.GetFaseAtual().blockAnswer : dataBlocos.GetFaseAtual().SelecionarBlocoAleatorio();
 			var pos = transform.position;
 			pos.z = 0f;
 
@@ -22,7 +25,7 @@ public class BlocoSpawnBehavior : MonoBehaviour {
 
 			if (childAhead > 0) {
 				ss.childAhead = childAhead - 1;
-				ss.IniciarInvocacao ();
+				ss.InvocarNormal ();
 			} 
 		}
 
@@ -32,12 +35,16 @@ public class BlocoSpawnBehavior : MonoBehaviour {
 
 
 
-	public void IniciarInvocacao() {
-		Spawn (false);
+	public void InvocarNormal() {
+		Spawn (TipoBloco.NORMAL);
 	}
 
 	public void InvocarResposta() {
-		Spawn (true);	
+		Spawn (TipoBloco.RESPOSTA);	
+	}
+
+	public void InvocarLimpo() {
+		Spawn (TipoBloco.LIMPO);
 	}
 
 }

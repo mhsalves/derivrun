@@ -15,10 +15,11 @@ public class GameController : MonoBehaviour {
 	private static int minQuestions = 1;
 
 	public Text tQuestion;
-	public int nQuestion = GameController.minQuestions;
 	public Text tScore;
-	public int nScore = 0;
 	public Text tLifes;
+
+	public int nQuestion = GameController.minQuestions;
+	public int nScore = 0;
 
 	public BlocoSpawnBehavior spawnInicialIsolado;
 	public CameraBehavior cameraBehavior;
@@ -30,17 +31,15 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-//		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
-
-		var data = equationsResources.SelecionarDataAleatoria ();
-		equationsArea.Carregar (data);
+		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
+		var questaoAtual = equationsResources.SelecionarDataAleatoria ();
+		this.equationsArea.Carregar (questaoAtual);
 
 		tQuestion.text = "" + nQuestion;
 		tScore.text = "" + nScore;
-//		tLifes.text = "" + this.lifeController.GetVidas ();
+		tLifes.text = "" + this.lifeController.GetVidas ();
 
-		spawnInicialIsolado.cleaned = true;
-		spawnInicialIsolado.IniciarInvocacao ();
+		spawnInicialIsolado.InvocarLimpo ();
 		contadorInicial.Comecar ();
 
 	}
@@ -59,6 +58,24 @@ public class GameController : MonoBehaviour {
 		player.Andar ();
 
 
+
+	}
+
+	public void ValidarResposta( int indiceResposta ){
+	
+		var r = this.equationsArea.VerificarCorreto (indiceResposta);
+
+		if (r) {
+			this.Pontuar ();
+		} else {
+			this.PerderVida ();
+			print ("perder vida");
+		}
+
+		var finish = this.NextQuestion ();
+		if (finish) {
+			this.EndGame ();
+		}
 
 	}
 
@@ -90,7 +107,7 @@ public class GameController : MonoBehaviour {
 			this.EndGame ();
 
 		} else {
-			tLifes.text = "" + this.lifeController.GetVidas ();
+			tLifes.text = "" + this.lifeController.GetVidasCorrente ();
 
 		}
 

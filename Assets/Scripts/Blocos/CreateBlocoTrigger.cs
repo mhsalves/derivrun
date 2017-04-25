@@ -5,7 +5,7 @@ using UnityEngine;
 public class CreateBlocoTrigger : MonoBehaviour {
 
 	public GameController gameController;
-	private int contadorResposta = 5; //Quantidade de blocos para aparecer o Bloco de Respostas
+	private int contadorResposta = 2; //Quantidade de blocos para aparecer o Bloco de Respostas
 
 	void OnTriggerEnter2D( Collider2D other ) {
 		
@@ -17,11 +17,10 @@ public class CreateBlocoTrigger : MonoBehaviour {
 			if (gameController.contadorDeBlocos == contadorResposta) {
 				ss.InvocarResposta ();
 			} else if (gameController.contadorDeBlocos == contadorResposta+1){
-				ss.cleaned = true;
-				ss.IniciarInvocacao ();
+				ss.InvocarLimpo ();
 				gameController.contadorDeBlocos = 0;
 			} else {
-				ss.IniciarInvocacao ();
+				ss.InvocarNormal ();
 			}
 
 		}
