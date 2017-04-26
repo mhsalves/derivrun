@@ -44,4 +44,10 @@ public class EndController : MonoBehaviour {
 		var lf = GameObject.Find ("LifeController").GetComponent<LifeController> ();
 		lf.IniciarCom (lf.GetVidas ());
 	}
+
+	public void KillBGMController() {
+		var g = GameObject.Find ("BGMController");
+		Destroy (g);
+	}
+
 }
