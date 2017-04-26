@@ -10,9 +10,10 @@ public class GameController : MonoBehaviour {
 
 	public ScreenController screenController;
 	private LifeController lifeController;
+	public ResultsController resultsController;
 
-	private static int maxQuestions = 10;
-	private static int minQuestions = 1;
+	public readonly static int maxQuestions = 10;
+	public readonly static int minQuestions = 1;
 
 	public Text tQuestion;
 	public Text tScore;
@@ -69,11 +70,11 @@ public class GameController : MonoBehaviour {
 			this.Pontuar ();
 		} else {
 			this.PerderVida ();
-			print ("perder vida");
 		}
 
 		var finish = this.NextQuestion ();
 		if (finish) {
+			this.AtualizarResults ();
 			this.EndGame ();
 		}
 
@@ -104,6 +105,7 @@ public class GameController : MonoBehaviour {
 		var p = lifeController.PerderVida ();
 
 		if (p) {
+			this.AtualizarResults ();
 			this.EndGame ();
 
 		} else {
@@ -111,6 +113,12 @@ public class GameController : MonoBehaviour {
 
 		}
 
+	}
+
+	private void AtualizarResults() {
+		resultsController.vidasTotais = lifeController.GetVidas ();
+		resultsController.vidasCorrente = lifeController.GetVidasCorrente ();
+		resultsController.qtdAcertos = nScore;
 	}
 
 	public void PauseGame() {
