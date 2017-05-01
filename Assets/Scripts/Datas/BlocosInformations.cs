@@ -6,7 +6,7 @@ using Utilitarios;
 public class BlocosInformations : MonoBehaviour {
 
 	public enum MarkerType {
-		FLORESTA, DESERTO
+		SALADEAULA, DIRETORIA, LANCHONETE
 	}
 
 	[System.Serializable]
@@ -27,25 +27,28 @@ public class BlocosInformations : MonoBehaviour {
 		}
 	}
 
-	public Fase faseFloresta;
-	public Fase faseDeserto;
+	public Fase faseSalaDeAula;
+	public Fase faseDiretoria;
+	public Fase faseLanchonete;
 
 	public Fase GetFaseAtual() {
 
 		//TODO logica para determinar fase
 
-		return faseFloresta;
+		return faseSalaDeAula;
 
 	}
 
 	public Fase GetFaseByMarker( MarkerType marker ) {
 		switch (marker) {
-		case MarkerType.FLORESTA:
-			return faseFloresta;
-		case MarkerType.DESERTO:
-			return faseDeserto;
+		case MarkerType.SALADEAULA:
+			return faseSalaDeAula;
+		case MarkerType.DIRETORIA:
+			return faseDiretoria;
+		case MarkerType.LANCHONETE:
+			return faseLanchonete;
 		default:
-			return faseFloresta;
+			return faseSalaDeAula;
 		}
 	}
 
