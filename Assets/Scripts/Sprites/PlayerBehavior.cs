@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour {
 	
 	private float passo = 1f;
+	public float speed = 1.0f;
 
+	public List<Transform> pointsPositions;
 	public MovementDirection movementDir = MovementDirection.FRENTE;
 	public bool podeMoverPraDireita = true;
 	public bool podeMoverPraEsquerda = true;
@@ -32,6 +34,8 @@ public class PlayerBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		this.Mexer ();
+
 	}
 
 	public void LancarPoder() {
@@ -47,7 +51,7 @@ public class PlayerBehavior : MonoBehaviour {
 			podeDarPasso = false;
 			this.movementDir = MovementDirection.DIREITA;
 			this.podeMoverPraEsquerda = true;
-			this.animator.SetTrigger (PlayerBehavior.animJump);
+			//this.animator.SetTrigger (PlayerBehavior.animJump);
 		}
 	}
 
@@ -56,13 +60,63 @@ public class PlayerBehavior : MonoBehaviour {
 			podeDarPasso = false;
 			this.movementDir = MovementDirection.ESQUERDA;
 			this.podeMoverPraDireita = true;
-			this.animator.SetTrigger (PlayerBehavior.animJump);
+			//this.animator.SetTrigger (PlayerBehavior.animJump);
 		}
 	}
 
 	public void LiberarPasso() {
 		podeDarPasso = true;
 	}
+
+	public void GoDireita () {
+		this.movementDir = MovementDirection.DIREITA;
+	}
+
+	public void GoEsquerda () {
+		this.movementDir = MovementDirection.ESQUERDA;
+	}
+
+	public void GoFrente () {
+		this.movementDir = MovementDirection.FRENTE;
+		//this.AjustarPosicao ();
+	}
+
+	private void AjustarPosicao() {
+
+		var pAtual = this.transform.position;
+		var menorDist = pAtual.x - pointsPositions [0].position.x;
+		var menorPosition = pointsPositions [0].position;
+
+		foreach (Transform t in pointsPositions) {
+
+			var dist = Vector2.Distance (t.position, pAtual);
+
+			if (dist <= menorDist) {
+				menorDist = dist;
+				menorPosition = t.position;
+			}
+		}
+
+		this.transform.position = new Vector2 (menorPosition.x, this.transform.position.y);
+
+	}
+
+	private void Mexer() {
+	
+		if (movementDir != MovementDirection.FRENTE) {
+
+			var dir = (movementDir == MovementDirection.DIREITA) ? 1.0f : -1.0f;
+			var newSX = Mathf.Abs (this.transform.localScale.x) * dir;
+			var toScale = new Vector3 (newSX, this.transform.localScale.y);
+
+			this.transform.Translate (speed * Time.deltaTime * dir, 0f, 0f);
+			this.transform.localScale = toScale;
+
+		}
+
+	}
+
+
 
 	public void PularProLado( int fracao ) {
 
