@@ -16,7 +16,7 @@ public class PlayerTriggerBehavior : MonoBehaviour {
 		}
 
 		if ( other.tag == "AjusteDePosicionamento" ) {
-			m_PlayerBehavior.ValidarPosicaoCorreta ();
+			m_PlayerBehavior.AcionarPosicionamento ();
 			print ("Posicao ajustada");
 		}
 

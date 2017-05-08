@@ -30,6 +30,8 @@ public class PlayerUserControlBehavior : MonoBehaviour {
 
 		mPlayerBehavior.Mover (mAndarNaDirecao);
 
+		mPlayerBehavior.MoverParaPosicaoCorreta ();
+
 	}
 
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilitarios;
 
 public class PlayerBehavior : MonoBehaviour {
 
@@ -26,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour {
 
 	[SerializeField] private Transform m_Corpo;
 	[SerializeField] private float m_AlturaNatural = 0f;
+	private bool m_MoverParaPosicao = false;
 	private Animator mAnimator;
 
 	private void Awake() {
@@ -64,7 +66,7 @@ public class PlayerBehavior : MonoBehaviour {
 
 	}
 
-	public void ValidarPosicaoCorreta() {
+	private void ValidarPosicaoCorreta() {
 
 		if (this.transform.localPosition.y != m_AlturaNatural) {
 			Vector3 p = this.transform.localPosition;
@@ -73,6 +75,31 @@ public class PlayerBehavior : MonoBehaviour {
 		}
 
 	}
+
+	public void AcionarPosicionamento () {
+		this.m_MoverParaPosicao = true;
+	}
+
+	public void MoverParaPosicaoCorreta() {
+
+		if (m_MoverParaPosicao) {
+			var pAtual = this.transform.localPosition;
+			var curve = Mathf.Abs(pAtual.y - m_AlturaNatural);
+			var speed = (4.5f + curve) * Time.deltaTime;
+
+			var curveAbroad = .011f;
+
+			var pY = Mathf.Lerp (pAtual.y, m_AlturaNatural, speed);
+			this.transform.localPosition = new Vector3 (pAtual.x, pY, pAtual.z);
+
+			if (NumberUtils.IsWithin(pAtual.y, m_AlturaNatural - curveAbroad, m_AlturaNatural + curveAbroad)) {
+				m_MoverParaPosicao = false;
+			}
+
+		}
+
+	}
+
 
 	public void LancarPoder() {
 
