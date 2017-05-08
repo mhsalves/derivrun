@@ -32,16 +32,19 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
+//		this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
 		var questaoAtual = equationsResources.SelecionarDataAleatoria ();
 		this.equationsArea.Carregar (questaoAtual);
 
 		tQuestion.text = "" + nQuestion;
 		tScore.text = "" + nScore;
-		tLifes.text = "" + this.lifeController.GetVidas ();
+//		tLifes.text = "" + this.lifeController.GetVidas ();
 
 		spawnInicialIsolado.InvocarLimpo ();
+		this.player.Mover (PlayerBehavior.Direcao.NENHUM);
 		contadorInicial.Comecar ();
+
+
 
 	}
 	
@@ -56,9 +59,7 @@ public class GameController : MonoBehaviour {
 
 		//Começar a mexer camera
 		cameraBehavior.mexer = true;
-		player.Andar ();
-
-
+		this.player.Mover (PlayerBehavior.Direcao.FRENTE);
 
 	}
 

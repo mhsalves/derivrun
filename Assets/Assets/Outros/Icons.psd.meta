@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 566e4124a85834518a533a3d02f6b6fa
-timeCreated: 1491359510
+timeCreated: 1494271425
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -244,6 +244,19 @@ TextureImporter:
         width: 390
         height: 390
       alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Icons_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 390
+        width: 390
+        height: 390
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -252,7 +265,7 @@ TextureImporter:
       name: Icons_12
       rect:
         serializedVersion: 2
-        x: 0
+        x: 390
         y: 390
         width: 390
         height: 390
@@ -265,7 +278,7 @@ TextureImporter:
       name: Icons_13
       rect:
         serializedVersion: 2
-        x: 390
+        x: 780
         y: 390
         width: 390
         height: 390
@@ -275,50 +288,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Icons_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 390
-        height: 390
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icons_17
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 0
-        width: 390
-        height: 390
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icons_18
-      rect:
-        serializedVersion: 2
-        x: 780
-        y: 0
-        width: 390
-        height: 390
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Icons_19
+      name: Icons_14
       rect:
         serializedVersion: 2
         x: 1170
-        y: 0
+        y: 390
         width: 390
         height: 390
       alignment: 0
