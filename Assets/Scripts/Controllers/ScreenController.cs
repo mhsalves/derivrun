@@ -22,4 +22,7 @@ public class ScreenController : MonoBehaviour {
 		SceneManager.LoadScene (0);
 	}
 
+	public void AbrirGuide() {
+		SceneManager.LoadScene (3);
+	}
 }
