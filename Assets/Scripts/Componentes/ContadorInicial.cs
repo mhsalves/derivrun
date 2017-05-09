@@ -3,30 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ContadorInicial : MonoBehaviour {
+namespace Componentes {
 
-	public GameObject parent;
-	public Animator animator;
-	public Text text;
+	public class ContadorInicial : MonoBehaviour {
 
-	public GameController gameController;
+		public GameObject parent;
+		public Animator animator;
+		public Text text;
 
-	public void Comecar() {
-		this.parent.SetActive (true);
-	}
+		public GameController gameController;
 
-	public void Fechar(){
-		this.parent.gameObject.SetActive (false);
-	}
+		public void Comecar() {
+			this.parent.SetActive (true);
+		}
 
-	public void IniciarGame() {
-		this.parent.SetActive (false);
-		this.gameController.Iniciar ();
+		public void Fechar(){
+			this.parent.gameObject.SetActive (false);
+		}
 
-	}
+		public void IniciarGame() {
+			this.parent.SetActive (false);
+			this.gameController.Iniciar ();
 
-	public void MudarValor( int valor ) {
-		this.text.text = "" + valor;
+		}
+
+		public void MudarValor( int valor ) {
+			this.text.text = "" + valor;
+		}
+
 	}
 
 }

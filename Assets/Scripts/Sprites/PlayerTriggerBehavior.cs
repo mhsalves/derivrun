@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof (PlayerBehavior))]
-public class PlayerTriggerBehavior : MonoBehaviour {
+namespace PlayerScripts {
 
-	public PlayerBehavior m_PlayerBehavior;
+	[RequireComponent(typeof (PlayerBehavior))]
+	public class PlayerTriggerBehavior : MonoBehaviour {
 
-	void OnTriggerEnter2D(Collider2D other){
+		public PlayerBehavior m_PlayerBehavior;
 
-		if ( other.tag == "OpcaoObstaculo") {
-			var oo = other.GetComponent<OpcaoBehavior> ();
-			oo.Validar ();
-			print ("Validar");
-		}
+		void OnTriggerEnter2D(Collider2D other){
 
-		if ( other.tag == "AjusteDePosicionamento" ) {
-			m_PlayerBehavior.AcionarPosicionamento ();
-			print ("Posicao ajustada");
+			if ( other.tag == "OpcaoObstaculo") {
+				var oo = other.GetComponent<OpcaoBehavior> ();
+				oo.Validar ();
+				print ("Validar");
+			}
+
+			if ( other.tag == "AjusteDePosicionamento" ) {
+				m_PlayerBehavior.AcionarPosicionamento ();
+				print ("Posicao ajustada");
+			}
+
 		}
 
 	}

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Componentes;
+using PlayerScripts;
 
 public class GameController : MonoBehaviour {
 

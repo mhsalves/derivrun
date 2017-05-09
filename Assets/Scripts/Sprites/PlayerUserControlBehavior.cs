@@ -2,35 +2,39 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof (PlayerBehavior))]
-public class PlayerUserControlBehavior : MonoBehaviour {
+namespace PlayerScripts {
 
-	private PlayerBehavior mPlayerBehavior;
+	[RequireComponent(typeof (PlayerBehavior))]
+	public class PlayerUserControlBehavior : MonoBehaviour {
 
-	private PlayerBehavior.Direcao mAndarNaDirecao;
+		private PlayerBehavior mPlayerBehavior;
 
-	void Awake () {
-		this.mPlayerBehavior = GetComponent<PlayerBehavior> ();
-	
-	}
+		private PlayerBehavior.Direcao mAndarNaDirecao;
 
-	public void AcionarParaDireita() {
-		this.mAndarNaDirecao = PlayerBehavior.Direcao.DIREITA;
-	}
+		void Awake () {
+			this.mPlayerBehavior = GetComponent<PlayerBehavior> ();
+		
+		}
 
-	public void AcionarParaEsquerda() {
-		this.mAndarNaDirecao = PlayerBehavior.Direcao.ESQUERDA;
-	}
+		public void AcionarParaDireita() {
+			this.mAndarNaDirecao = PlayerBehavior.Direcao.DIREITA;
+		}
 
-	public void AcionarParaFrente() {
-		this.mAndarNaDirecao = PlayerBehavior.Direcao.FRENTE;
-	}
+		public void AcionarParaEsquerda() {
+			this.mAndarNaDirecao = PlayerBehavior.Direcao.ESQUERDA;
+		}
 
-	void FixedUpdate() {
+		public void AcionarParaFrente() {
+			this.mAndarNaDirecao = PlayerBehavior.Direcao.FRENTE;
+		}
 
-		mPlayerBehavior.Mover (mAndarNaDirecao);
+		void FixedUpdate() {
 
-		mPlayerBehavior.MoverParaPosicaoCorreta ();
+			mPlayerBehavior.Mover (mAndarNaDirecao);
+
+			mPlayerBehavior.MoverParaPosicaoCorreta ();
+
+		}
 
 	}
 
