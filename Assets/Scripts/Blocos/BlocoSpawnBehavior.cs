@@ -1,50 +1,55 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InformacoesEstaticas;
 
-public class BlocoSpawnBehavior : MonoBehaviour {
-	
-	public int childAhead = 0;
-	private bool spawned = false;
+namespace BlocoScripts {
 
-	public BlocosInformations dataBlocos;
+	public class BlocoSpawnBehavior : MonoBehaviour {
+		
+		public int childAhead = 0;
+		private bool spawned = false;
 
-	public enum TipoBloco {
-		LIMPO, NORMAL, RESPOSTA
-	}
+		public BlocosInformations dataBlocos;
 
-	private void Spawn( TipoBloco tipo ) {
-
-		if (!spawned) {
-			var obj = (tipo == TipoBloco.LIMPO) ? dataBlocos.GetFaseAtual ().blockCleaned : (tipo == TipoBloco.RESPOSTA) ? dataBlocos.GetFaseAtual().blockAnswer : dataBlocos.GetFaseAtual().SelecionarBlocoAleatorio();
-			var pos = transform.position;
-			pos.z = 0f;
-
-			GameObject go = (GameObject) Instantiate (obj, pos, Quaternion.identity);
-			var ss = go.transform.Find ("SpawnPoint").GetComponent<BlocoSpawnBehavior> ();
-
-			if (childAhead > 0) {
-				ss.childAhead = childAhead - 1;
-				ss.InvocarNormal ();
-			} 
+		public enum TipoBloco {
+			LIMPO, NORMAL, RESPOSTA
 		}
 
-		spawned = true;
+		private void Spawn( TipoBloco tipo ) {
 
-	}
+			if (!spawned) {
+				var obj = (tipo == TipoBloco.LIMPO) ? dataBlocos.GetFaseAtual ().blockCleaned : (tipo == TipoBloco.RESPOSTA) ? dataBlocos.GetFaseAtual().blockAnswer : dataBlocos.GetFaseAtual().SelecionarBlocoAleatorio();
+				var pos = transform.position;
+				pos.z = 0f;
+
+				GameObject go = (GameObject) Instantiate (obj, pos, Quaternion.identity);
+				var ss = go.transform.Find ("SpawnPoint").GetComponent<BlocoSpawnBehavior> ();
+
+				if (childAhead > 0) {
+					ss.childAhead = childAhead - 1;
+					ss.InvocarNormal ();
+				} 
+			}
+
+			spawned = true;
+
+		}
 
 
 
-	public void InvocarNormal() {
-		Spawn (TipoBloco.NORMAL);
-	}
+		public void InvocarNormal() {
+			Spawn (TipoBloco.NORMAL);
+		}
 
-	public void InvocarResposta() {
-		Spawn (TipoBloco.RESPOSTA);	
-	}
+		public void InvocarResposta() {
+			Spawn (TipoBloco.RESPOSTA);	
+		}
 
-	public void InvocarLimpo() {
-		Spawn (TipoBloco.LIMPO);
+		public void InvocarLimpo() {
+			Spawn (TipoBloco.LIMPO);
+		}
+
 	}
 
 }

@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMController : MonoBehaviour {
+namespace Controladores {
 
-//	private AudioSource source;
+	public class BGMController : MonoBehaviour {
 
-	void Start() {
-		DontDestroyOnLoad (transform.gameObject);
-//		source = GetComponent<AudioSource> ();
+	//	private AudioSource source;
+
+		void Start() {
+			DontDestroyOnLoad (transform.gameObject);
+	//		source = GetComponent<AudioSource> ();
+
+		}
 
 	}
 

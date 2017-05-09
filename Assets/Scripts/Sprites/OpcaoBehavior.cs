@@ -1,26 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controladores;
 
-public class OpcaoBehavior : MonoBehaviour {
+namespace ObjetoScript {
 
-	private GameController gameController;
+	public class OpcaoBehavior : MonoBehaviour {
 
-	[System.Serializable]
-	public enum Tipo : int {
-		A = 0, B = 1, C = 2, D = 3
-	}
+		private GameController gameController;
 
-	public Tipo tipo = Tipo.A;
+		[System.Serializable]
+		public enum Tipo : int {
+			A = 0, B = 1, C = 2, D = 3
+		}
 
-	// Use this for initialization
-	void Start () {
-		this.gameController = GameObject.Find ("GameController").GetComponent<GameController> ();
+		public Tipo tipo = Tipo.A;
 
-	}
+		// Use this for initialization
+		void Start () {
+			this.gameController = GameObject.Find ("GameController").GetComponent<GameController> ();
 
-	public void Validar() {
-		this.gameController.ValidarResposta ((int) tipo);
+		}
+
+		public void Validar() {
+			this.gameController.ValidarResposta ((int) tipo);
+		}
+
 	}
 
 }

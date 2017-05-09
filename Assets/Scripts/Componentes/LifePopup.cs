@@ -1,26 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controladores;
 
 namespace Componentes {
 
 	public class LifePopup : MonoBehaviour {
 
-		public List<LifePopupItem> listHearts;
-		private LifeController lifeController;
+		[SerializeField] private LifeController c_LifeController;
+		[SerializeField] private List<LifePopupItem> listHearts;
 
-		public GameObject mainContent;
+		[SerializeField] public GameObject mainContent;
 
 		void Start() {
 
-			this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
+			if (this.c_LifeController == null) 
+				this.c_LifeController = GameObject.FindGameObjectWithTag ("LifeController").GetComponent<LifeController> ();
+			
 			this.AtualizarDesenho ();
 
 		}
 
 		public void AplicarQuantidade (int quantidade) {
 
-			this.lifeController.IniciarCom (quantidade);
+			this.c_LifeController.IniciarCom (quantidade);
 			this.AtualizarDesenho ();
 
 		}
@@ -33,11 +36,11 @@ namespace Componentes {
 
 		private void AtualizarDesenho(){
 			
-			for (int i = 0; i < this.lifeController.GetVidas(); i++) {
+			for (int i = 0; i < this.c_LifeController.GetVidas(); i++) {
 				this.listHearts[i].Acender();
 			}
 
-			for (int i = this.lifeController.GetVidas (); i < LifeController.maxVidas; i++) {
+			for (int i = this.c_LifeController.GetVidas (); i < LifeController.maxVidas; i++) {
 				this.listHearts[i].Apagar();
 			}
 

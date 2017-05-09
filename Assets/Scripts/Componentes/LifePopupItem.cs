@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace Componentes {
 
+	[RequireComponent(typeof (Animator))]
 	public class LifePopupItem : MonoBehaviour {
 		
 		private Animator animator;

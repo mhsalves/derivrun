@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilitarios;
+using InformacoesEstaticas;
 
 namespace Componentes {
 	
