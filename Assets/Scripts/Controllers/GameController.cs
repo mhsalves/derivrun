@@ -12,62 +12,70 @@ namespace Controladores {
 
 	public class GameController : MonoBehaviour {
 
-		public EquationsResources equationsResources;
-		public EquationsArea equationsArea;
+		[SerializeField] private EquationsResources m_EquationsResources;
+		[SerializeField] private EquationsArea m_EquationsArea;
 
-		public ScreenController screenController;
-		private LifeController lifeController;
-		public ResultsController resultsController;
+	 	public ScreenController m_ScreenController;
+		private LifeController c_LifeController;
+		private ResultsController c_ResultsController;
 
-		public readonly static int maxQuestions = 10;
-		public readonly static int minQuestions = 1;
+		public readonly static int k_MaxQuestions = 10;
+		public readonly static int k_minQuestions = 1;
 
-		public Text tQuestion;
-		public Text tScore;
-		public Text tLifes;
+		[SerializeField] private Text m_Question;
+		[SerializeField] private Text m_Score;
+		[SerializeField] private Text m_Lifes;
 
-		public int nQuestion = GameController.minQuestions;
-		public int nScore = 0;
+		private int numQuestion = GameController.k_minQuestions;
+		private int numScore = 0;
 
-		public BlocoSpawnBehavior spawnInicialIsolado;
-		public CameraMoveBehavior cameraBehavior;
-		public PlayerBehavior player;
-		public ContadorInicial contadorInicial;
+		[SerializeField] private BlocoSpawnBehavior m_SpawnIsolado;
 
-		public int contadorDeBlocos = 0;
+		public CameraMoveBehavior m_CameraMoveBehaviour;
+		public PlayerBehavior m_Player;
+		[SerializeField] private ContadorInicial m_ContadorInicial;
+
+		public int numBlocos = 0;
+
+		void Awake () {
+			
+			this.c_LifeController = GameObject.FindGameObjectWithTag ("LifeController").GetComponent<LifeController> ();
+			this.c_ResultsController = GameObject.FindGameObjectWithTag ("ResultsController").GetComponent<ResultsController> ();
+
+		}
 
 		// Use this for initialization
 		void Start () {
 
-			this.lifeController = GameObject.Find ("LifeController").GetComponent<LifeController> ();
-			var questaoAtual = equationsResources.SelecionarDataAleatoria ();
-			this.equationsArea.Carregar (questaoAtual);
+			this.c_LifeController.IniciarCom (this.c_LifeController.GetVidas ());
+			this.AtualizarResults ();
+			var questaoAtual = this.m_EquationsResources.SelecionarDataAleatoria ();
 
-			tQuestion.text = "" + nQuestion;
-			tScore.text = "" + nScore;
-			tLifes.text = "" + this.lifeController.GetVidas ();
+			this.m_EquationsArea.Carregar (questaoAtual);
 
-			spawnInicialIsolado.InvocarLimpo ();
-			this.contadorDeBlocos = spawnInicialIsolado.childAhead - 1;
+			this.m_Question.text = "" + numQuestion;
+			this.m_Score.text = "" + numScore;
+			this.m_Lifes.text = "" + this.c_LifeController.GetVidas () ?? "1";
 
-			this.player.Mover (PlayerBehavior.Direcao.NENHUM);
-			contadorInicial.Comecar ();
+			this.m_SpawnIsolado.InvocarLimpo ();
+			this.numBlocos = m_SpawnIsolado.childAhead - 1;
 
-
+			this.m_Player.Mover (PlayerBehavior.Direcao.NENHUM);
+			this.m_ContadorInicial.Comecar ();
 
 		}
 
 		public void Iniciar() {
 
 			//Começar a mexer camera
-			cameraBehavior.Mover ();
-			this.player.Mover (PlayerBehavior.Direcao.FRENTE);
+			this.m_CameraMoveBehaviour.Mover ();
+			this.m_Player.Mover (PlayerBehavior.Direcao.FRENTE);
 
 		}
 
 		public void ValidarResposta( int indiceResposta ){
 		
-			var r = this.equationsArea.VerificarCorreto (indiceResposta);
+			var r = this.m_EquationsArea.VerificarCorreto (indiceResposta);
 
 			if (r) {
 				this.Pontuar ();
@@ -84,20 +92,20 @@ namespace Controladores {
 		}
 
 		private void Pontuar() {
-			nScore++;
-			tScore.text = "" + nScore;
+			numScore++;
+			m_Score.text = "" + numScore;
 		}
 
 		private bool NextQuestion() {
 		
-			nQuestion++;
-			if (nQuestion > maxQuestions) {
+			numQuestion++;
+			if (numQuestion > k_MaxQuestions) {
 				return true; //Acabou !
 			} else {
-				tQuestion.text = "" + nQuestion;
+				m_Question.text = "" + numQuestion;
 
-				var data = equationsResources.SelecionarDataAleatoria ();
-				equationsArea.Carregar (data);
+				var data = m_EquationsResources.SelecionarDataAleatoria ();
+				m_EquationsArea.Carregar (data);
 
 				return false; //Ainda não acabou
 			}
@@ -105,23 +113,23 @@ namespace Controladores {
 
 		private void PerderVida(){
 
-			var p = lifeController.PerderVida ();
+			var p = c_LifeController.PerderVida ();
 
 			if (p) {
 				this.AtualizarResults ();
 				this.EndGame ();
 
 			} else {
-				tLifes.text = "" + this.lifeController.GetVidasCorrente ();
+				m_Lifes.text = "" + this.c_LifeController.GetVidasCorrente ();
 
 			}
 
 		}
 
 		private void AtualizarResults() {
-			resultsController.vidasTotais = lifeController.GetVidas ();
-			resultsController.vidasCorrente = lifeController.GetVidasCorrente ();
-			resultsController.qtdAcertos = nScore;
+			c_ResultsController.vidasTotais = c_LifeController.GetVidas ();
+			c_ResultsController.vidasCorrente = c_LifeController.GetVidasCorrente ();
+			c_ResultsController.qtdAcertos = numScore;
 		}
 
 		public void PauseGame() {
@@ -133,7 +141,7 @@ namespace Controladores {
 		}
 
 		public void EndGame() {
-			screenController.AbrirEnd ();
+			m_ScreenController.AbrirEnd ();
 		}
 
 	}

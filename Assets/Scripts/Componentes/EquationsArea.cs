@@ -26,7 +26,7 @@ namespace Componentes {
 			this.resposta1.sprite = this.lista[1].sprite;
 			this.resposta2.sprite = this.lista[2].sprite;
 			this.resposta3.sprite = this.lista[3].sprite;	
-		
+
 		}
 		
 

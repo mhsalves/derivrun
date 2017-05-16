@@ -14,14 +14,14 @@ namespace BlocoScripts {
 			
 			if (other.tag == "PointSpawnBlock") {
 
-				gameController.contadorDeBlocos++;
+				gameController.numBlocos++;
 				var ss = other.GetComponent<BlocoSpawnBehavior> ();
 
-				if (gameController.contadorDeBlocos == contadorResposta) {
+				if (gameController.numBlocos == contadorResposta) {
 					ss.InvocarResposta ();
-				} else if (gameController.contadorDeBlocos == contadorResposta+1){
+				} else if (gameController.numBlocos == contadorResposta+1){
 					ss.InvocarLimpo ();
-					gameController.contadorDeBlocos = 0;
+					gameController.numBlocos = 0;
 				} else {
 					ss.InvocarNormal ();
 				}

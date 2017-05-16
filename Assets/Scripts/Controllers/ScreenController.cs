@@ -11,21 +11,21 @@ namespace Controladores {
 			DontDestroyOnLoad (gameObject);
 
 		}
-
-		public void AbrirGame() {
+			
+		public void AbrirMain() {
 			SceneManager.LoadScene (1);
 		}
 
-		public void AbrirEnd() {
+		public void AbrirGame() {
 			SceneManager.LoadScene (2);
 		}
 
-		public void AbrirMain() {
-			SceneManager.LoadScene (0);
+		public void AbrirEnd() {
+			SceneManager.LoadScene (3);
 		}
 
 		public void AbrirGuide() {
-			SceneManager.LoadScene (3);
+			SceneManager.LoadScene (4);
 		}
 	}
 

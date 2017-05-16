@@ -7,17 +7,21 @@ namespace Componentes {
 
 	public class LifePopup : MonoBehaviour {
 
-		[SerializeField] private LifeController c_LifeController;
+		private LifeController c_LifeController;
 		[SerializeField] private List<LifePopupItem> listHearts;
 
 		[SerializeField] public GameObject mainContent;
 
-		void Start() {
+		void Awake () {
 
 			if (this.c_LifeController == null) 
 				this.c_LifeController = GameObject.FindGameObjectWithTag ("LifeController").GetComponent<LifeController> ();
 			
-			this.AtualizarDesenho ();
+		}
+
+		void Start() {
+
+			this.AplicarQuantidade (1);
 
 		}
 

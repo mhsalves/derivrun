@@ -11,18 +11,49 @@ namespace Controladores {
 
 		public int qtdAcertos;
 
+		public int aproveitamentoTotal {
+			get { 
+				var v = aproveitamentoVidas;
+				var q = aproveitamentoAcertos;
+
+				return (int)((v + q) / 2);
+			}
+		}
+
+		public int aproveitamentoVidas {
+			get { 
+				return (int)(vidasCorrente / vidasTotais) * 100;
+			}
+		}
+
+		public int aproveitamentoAcertos {
+			get { 
+				return (int)(qtdAcertos / GameController.k_MaxQuestions) * 100;
+			}
+		}
+
+		public string aproveitamentoTotalLabel {
+			get { 
+				return aproveitamentoTotal + "%";
+			}
+		}
+
+		public string aproveitamentoVidasLabel {
+			get { 
+				return aproveitamentoVidas + "%";
+			}
+		}
+
+		public string aproveitamentoAcertosLabel {
+			get { 
+				return aproveitamentoAcertos + "%";
+			}
+		}
 
 		// Use this for initialization
 		void Start () {
 			DontDestroyOnLoad (gameObject);
 
-		}
-
-		public string GetAproveitamento() {
-			var v = vidasCorrente / vidasTotais * 100;
-			var q = qtdAcertos / GameController.maxQuestions * 100;
-
-			return ((int) ((v+q)/2)) + "%"; 
 		}
 
 		public string GetVidasLabel() {
@@ -32,7 +63,7 @@ namespace Controladores {
 
 		public string GetAcertosLabel() {
 			var sep = " de ";
-			return qtdAcertos + sep + GameController.maxQuestions;
+			return qtdAcertos + sep + GameController.k_MaxQuestions;
 		}
 	}
 

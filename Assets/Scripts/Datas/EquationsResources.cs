@@ -25,7 +25,6 @@ namespace InformacoesEstaticas {
 			
 		public List<Data> dados;
 
-
 		public Data SelecionarDataAleatoria() {
 			int i = RandomUtils.RandomInt (0, dados.Count);
 			return dados [i];

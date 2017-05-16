@@ -8,26 +8,32 @@ namespace Componentes {
 	[RequireComponent(typeof (Animator))]
 	public class LifePopupItem : MonoBehaviour {
 		
-		private Animator animator;
-		private bool aceso = false;
+		private Animator m_Animator;
+		[SerializeField] private bool a_Aceso = false;
 
-		void Start() {
-			this.animator = GetComponent<Animator> ();
+		void Awake () {
+			this.m_Animator = GetComponent<Animator> ();
 
 		}
 
-		public void Acender() {
-			this.aceso = true;
-			this.atualizar ();
+		void Start () {
+			this.AtualizarAnims ();
+
 		}
 
-		public void Apagar(){
-			this.aceso = false;
-			this.atualizar ();
+		public void Acender () {
+			this.a_Aceso = true;
+			this.AtualizarAnims ();
 		}
 
-		private void atualizar(){
-			this.animator.SetBool ("Aceso", this.aceso);
+		public void Apagar (){
+			this.a_Aceso = false;
+			this.AtualizarAnims ();
+		}
+
+		private void AtualizarAnims (){
+			this.m_Animator.SetBool ("Aceso", this.a_Aceso);
+
 		}
 
 	}
