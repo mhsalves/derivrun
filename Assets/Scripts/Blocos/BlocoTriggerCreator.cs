@@ -15,7 +15,7 @@ namespace BlocoScripts {
 			if (other.tag == "PointSpawnBlock") {
 
 				gameController.numBlocos++;
-				var ss = other.GetComponent<BlocoSpawnBehavior> ();
+				var ss = other.GetComponent<BlocoSpawnBehaviour> ();
 
 				if (gameController.numBlocos == contadorResposta) {
 					ss.InvocarResposta ();

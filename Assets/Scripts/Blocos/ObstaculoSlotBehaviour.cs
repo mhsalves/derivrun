@@ -5,7 +5,7 @@ using InformacoesEstaticas;
 
 namespace BlocoScripts {
 
-	public class ObstaculoSlotBehavior : MonoBehaviour {
+	public class ObstaculoSlotBehaviour : MonoBehaviour {
 
 		public BlocosInformations dataBlocos;
 		public BlocosInformations.MarkerType marker;

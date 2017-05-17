@@ -10,7 +10,7 @@ namespace BlocoScripts {
 
 			if (other.tag == "ObstaculoSlot") {
 
-				var osb = other.GetComponent<ObstaculoSlotBehavior> ();
+				var osb = other.GetComponent<ObstaculoSlotBehaviour> ();
 				osb.Spawn ();
 
 			}

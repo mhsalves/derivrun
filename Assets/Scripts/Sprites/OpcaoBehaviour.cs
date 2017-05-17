@@ -5,7 +5,7 @@ using Controladores;
 
 namespace ObjetoScripts {
 
-	public class OpcaoBehavior : MonoBehaviour {
+	public class OpcaoBehaviour : MonoBehaviour {
 
 		private GameController m_GameController;
 

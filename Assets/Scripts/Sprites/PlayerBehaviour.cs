@@ -6,7 +6,7 @@ using ObjetoScripts;
 
 namespace PlayerScripts {
 	
-	public class PlayerBehavior : MonoBehaviour {
+	public class PlayerBehaviour : MonoBehaviour {
 
 		public enum Direcao : int {
 			DIREITA = 1, ESQUERDA = -1, FRENTE = 0, NENHUM = 2

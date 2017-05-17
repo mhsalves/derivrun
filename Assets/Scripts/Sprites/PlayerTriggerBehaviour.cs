@@ -7,12 +7,12 @@ namespace PlayerScripts {
 	
 	public class PlayerTriggerBehaviour : MonoBehaviour {
 
-		private PlayerBehavior m_PlayerBehavior;
+		private PlayerBehaviour m_PlayerBehavior;
 
 		void Awake () {
 
 			if (m_PlayerBehavior == null)
-				m_PlayerBehavior = this.GetComponentInParent<PlayerBehavior> ();
+				m_PlayerBehavior = this.GetComponentInParent<PlayerBehaviour> ();
 
 		}
 
@@ -20,7 +20,7 @@ namespace PlayerScripts {
 
 			if ( other.tag == "OpcaoObstaculo") {
 
-				var ob = other.GetComponent<OpcaoBehavior> ();
+				var ob = other.GetComponent<OpcaoBehaviour> ();
 				ob.Validar ();
 
 			}

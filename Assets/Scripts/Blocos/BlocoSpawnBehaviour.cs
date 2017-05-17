@@ -5,7 +5,7 @@ using InformacoesEstaticas;
 
 namespace BlocoScripts {
 
-	public class BlocoSpawnBehavior : MonoBehaviour {
+	public class BlocoSpawnBehaviour : MonoBehaviour {
 		
 		public int childAhead = 0;
 		private bool spawned = false;
@@ -24,7 +24,7 @@ namespace BlocoScripts {
 				pos.z = 0f;
 
 				GameObject go = (GameObject) Instantiate (obj, pos, Quaternion.identity);
-				var ss = go.transform.Find ("SpawnPoint").GetComponent<BlocoSpawnBehavior> ();
+				var ss = go.transform.Find ("SpawnPoint").GetComponent<BlocoSpawnBehaviour> ();
 
 				if (childAhead > 0) {
 					ss.childAhead = childAhead - 1;

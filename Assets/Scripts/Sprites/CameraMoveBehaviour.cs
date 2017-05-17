@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CameraScripts {
 
-	public class CameraMoveBehavior : MonoBehaviour {
+	public class CameraMoveBehaviour : MonoBehaviour {
 
 		[SerializeField] private float m_Velocidade = 3f;
 		[SerializeField] private bool m_Mover = false;

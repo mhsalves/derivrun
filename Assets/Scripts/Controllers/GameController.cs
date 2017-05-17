@@ -29,10 +29,10 @@ namespace Controladores {
 		private int numQuestion = GameController.k_minQuestions;
 		private int numScore = 0;
 
-		[SerializeField] private BlocoSpawnBehavior m_SpawnIsolado;
+		[SerializeField] private BlocoSpawnBehaviour m_SpawnIsolado;
 
-		public CameraMoveBehavior m_CameraMoveBehaviour;
-		public PlayerBehavior m_Player;
+		public CameraMoveBehaviour m_CameraMoveBehaviour;
+		public PlayerBehaviour m_Player;
 		[SerializeField] private ContadorInicial m_ContadorInicial;
 
 		public int numBlocos = 0;
@@ -60,7 +60,7 @@ namespace Controladores {
 			this.m_SpawnIsolado.InvocarLimpo ();
 			this.numBlocos = m_SpawnIsolado.childAhead - 1;
 
-			this.m_Player.Mover (PlayerBehavior.Direcao.NENHUM);
+			this.m_Player.Mover (PlayerBehaviour.Direcao.NENHUM);
 			this.m_ContadorInicial.Comecar ();
 
 		}
@@ -69,7 +69,7 @@ namespace Controladores {
 
 			//Começar a mexer camera
 			this.m_CameraMoveBehaviour.Mover ();
-			this.m_Player.Mover (PlayerBehavior.Direcao.FRENTE);
+			this.m_Player.Mover (PlayerBehaviour.Direcao.FRENTE);
 
 		}
 
