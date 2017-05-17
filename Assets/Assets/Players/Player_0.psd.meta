@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c6a60b9677264494887638534f1fe1c3
-timeCreated: 1492620396
+timeCreated: 1494986200
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -33,6 +33,26 @@ TextureImporter:
     21300052: Player_jumpside_4
     21300054: Player_14
     21300056: Player_17
+    21300058: Player_0_Run_0
+    21300060: Player_0_Run_1
+    21300062: Player_0_Run_2
+    21300064: Player_0_Run_3
+    21300066: Player_0_4
+    21300068: Player_0_Wait_0
+    21300070: Player_0_Wait_1
+    21300072: Player_0_7
+    21300074: Player_0_8
+    21300076: Player_0_Item_0
+    21300078: Player_0_Item_1
+    21300080: Player_0_Item_2
+    21300082: Player_0_Item_3
+    21300084: Player_0_13
+    21300086: Player_0_15
+    21300088: Player_0_16
+    21300090: Player_0_20
+    21300092: Player_0_21
+    21300094: Player_0_22
+    21300096: Player_0_23
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -115,137 +135,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_run_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 960
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_run_1
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 960
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_run_2
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 960
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_run_3
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 960
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_4
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 960
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_jumpside_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 720
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_jumpside_1
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 720
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_jumpside_2
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 720
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_jumpside_3
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 720
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_jumpside_4
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 720
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_power_0
+      name: Player_0_Run_0
       rect:
         serializedVersion: 2
         x: 0
@@ -258,7 +148,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_power_1
+      name: Player_0_Run_1
       rect:
         serializedVersion: 2
         x: 240
@@ -271,7 +161,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_power_2
+      name: Player_0_Run_2
       rect:
         serializedVersion: 2
         x: 480
@@ -284,7 +174,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_power_3
+      name: Player_0_Run_3
       rect:
         serializedVersion: 2
         x: 720
@@ -297,20 +187,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_14
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 480
-        width: 240
-        height: 240
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Player_wait_0
+      name: Player_0_Wait_0
       rect:
         serializedVersion: 2
         x: 0
@@ -323,7 +200,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_wait_1
+      name: Player_0_Wait_1
       rect:
         serializedVersion: 2
         x: 240
@@ -336,11 +213,50 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Player_17
+      name: Player_0_Item_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_0_Item_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_0_Item_2
       rect:
         serializedVersion: 2
         x: 480
-        y: 240
+        y: 0
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Player_0_Item_3
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
         width: 240
         height: 240
       alignment: 0

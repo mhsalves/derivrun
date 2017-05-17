@@ -7,34 +7,33 @@ namespace PlayerScripts {
 	[RequireComponent(typeof (PlayerBehavior))]
 	public class PlayerUserControlBehavior : MonoBehaviour {
 
-		private PlayerBehavior mPlayerBehavior;
-
-		private PlayerBehavior.Direcao mAndarNaDirecao;
+		private PlayerBehavior m_PlayerBehavior;
+		private PlayerBehavior.Direcao m_AndarNaDirecao;
 
 		void Awake () {
-			this.mPlayerBehavior = GetComponent<PlayerBehavior> ();
+			this.m_PlayerBehavior = GetComponent<PlayerBehavior> ();
 		
-		}
-
-		public void AcionarParaDireita() {
-			this.mAndarNaDirecao = PlayerBehavior.Direcao.DIREITA;
-		}
-
-		public void AcionarParaEsquerda() {
-			this.mAndarNaDirecao = PlayerBehavior.Direcao.ESQUERDA;
-		}
-
-		public void AcionarParaFrente() {
-			this.mAndarNaDirecao = PlayerBehavior.Direcao.FRENTE;
 		}
 
 		void FixedUpdate() {
 
-			mPlayerBehavior.Mover (mAndarNaDirecao);
-
-			mPlayerBehavior.MoverParaPosicaoCorreta ();
+			this.m_PlayerBehavior.Mover (m_AndarNaDirecao);
+			this.m_PlayerBehavior.MoverParaPosicaoCorreta ();
 
 		}
+
+		public void AcionarParaDireita() {
+			this.m_AndarNaDirecao = PlayerBehavior.Direcao.DIREITA;
+		}
+
+		public void AcionarParaEsquerda() {
+			this.m_AndarNaDirecao = PlayerBehavior.Direcao.ESQUERDA;
+		}
+
+		public void AcionarParaFrente() {
+			this.m_AndarNaDirecao = PlayerBehavior.Direcao.FRENTE;
+		}
+
 
 	}
 

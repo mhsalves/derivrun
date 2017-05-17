@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ObjetoScript;
+using ObjetoScripts;
 
 namespace PlayerScripts {
+	
+	public class PlayerTriggerBehaviour : MonoBehaviour {
 
-	[RequireComponent(typeof (PlayerBehavior))]
-	public class PlayerTriggerBehavior : MonoBehaviour {
+		private PlayerBehavior m_PlayerBehavior;
 
-		public PlayerBehavior m_PlayerBehavior;
+		void Awake () {
+
+			if (m_PlayerBehavior == null)
+				m_PlayerBehavior = this.GetComponentInParent<PlayerBehavior> ();
+
+		}
 
 		void OnTriggerEnter2D(Collider2D other){
 
 			if ( other.tag == "OpcaoObstaculo") {
-				var oo = other.GetComponent<OpcaoBehavior> ();
-				oo.Validar ();
-				print ("Validar");
+
+				var ob = other.GetComponent<OpcaoBehavior> ();
+				ob.Validar ();
+
 			}
 
 			if ( other.tag == "AjusteDePosicionamento" ) {

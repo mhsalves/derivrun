@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Controladores;
 
-namespace ObjetoScript {
+namespace ObjetoScripts {
 
 	public class OpcaoBehavior : MonoBehaviour {
 
-		private GameController gameController;
+		private GameController m_GameController;
 
 		[System.Serializable]
 		public enum Tipo : int {
 			A = 0, B = 1, C = 2, D = 3
 		}
 
-		public Tipo tipo = Tipo.A;
+		public Tipo m_Tipo = Tipo.A;
 
 		// Use this for initialization
-		void Start () {
-			this.gameController = GameObject.Find ("GameController").GetComponent<GameController> ();
+		void Awake () {
+			this.m_GameController = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 
 		}
 
 		public void Validar() {
-			this.gameController.ValidarResposta ((int) tipo);
+			this.m_GameController.ValidarResposta ((int) m_Tipo);
 		}
 
 	}

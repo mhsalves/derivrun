@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Utilitarios;
+using ObjetoScripts;
 
 namespace PlayerScripts {
 	
@@ -29,15 +30,16 @@ namespace PlayerScripts {
 
 		[SerializeField] private Transform m_Corpo;
 		[SerializeField] private float m_AlturaNatural = 0f;
+
 		private bool m_MoverParaPosicao = false;
-		private Animator mAnimator;
+		private Animator m_Animator;
 
 		private void Awake() {
 
 			this.mSideLeft = transform.Find ("SideLeft");
 			this.mSideRight = transform.Find ("SideRight");
 
-			this.mAnimator = m_Corpo.GetComponent<Animator> ();
+			this.m_Animator = m_Corpo.GetComponent<Animator> ();
 		
 			this.ValidarPosicaoCorreta ();
 
@@ -107,7 +109,7 @@ namespace PlayerScripts {
 
 			//TODO Aplicar logica de poder
 
-			this.mAnimator.SetTrigger (animPower);
+			this.m_Animator.SetTrigger (animPower);
 
 		}
 
@@ -126,16 +128,14 @@ namespace PlayerScripts {
 
 			} else if (direcao == Direcao.FRENTE) {
 
-				this.mAnimator.SetBool (animWalk, true);
+				this.m_Animator.SetBool (animWalk, true);
 
 			} else {
 
-				this.mAnimator.SetBool (animWalk, false);
+				this.m_Animator.SetBool (animWalk, false);
 
 			}
 				
-
-
 		}
 
 	}
