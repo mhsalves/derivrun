@@ -9,7 +9,7 @@ namespace Componentes {
 	public class LifePopupItem : MonoBehaviour {
 		
 		private Animator m_Animator;
-		[SerializeField] private bool a_Aceso = false;
+		[SerializeField] private bool m_Aceso = false;
 
 		void Awake () {
 			this.m_Animator = GetComponent<Animator> ();
@@ -22,17 +22,17 @@ namespace Componentes {
 		}
 
 		public void Acender () {
-			this.a_Aceso = true;
+			this.m_Aceso = true;
 			this.AtualizarAnims ();
 		}
 
 		public void Apagar (){
-			this.a_Aceso = false;
+			this.m_Aceso = false;
 			this.AtualizarAnims ();
 		}
 
 		private void AtualizarAnims (){
-			this.m_Animator.SetBool ("Aceso", this.a_Aceso);
+			this.m_Animator.SetBool ("Aceso", this.m_Aceso);
 
 		}
 
