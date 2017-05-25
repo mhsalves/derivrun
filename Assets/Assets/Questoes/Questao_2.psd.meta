@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: 60540756c509a4582a317d71a9711ae7
-timeCreated: 1495691958
+guid: a28088abe53844f2d9241b452d7cb7af
+timeCreated: 1495692822
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Questao_1_0
-    21300002: Questao_1_2
-    21300004: Questao_1_3
-    21300006: Questao_1_4
-    21300008: Questao_1_5
-    21300010: Questao_0_0
-    21300012: Questao_0_2
-    21300014: Questao_0_3
-    21300016: Questao_0_4
-    21300018: Questao_0_5
+    21300000: Questao_2_0
+    21300002: Questao_2_2
+    21300004: Questao_2_3
+    21300006: Questao_2_4
+    21300008: Questao_2_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -96,7 +91,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Questao_0_0
+      name: Questao_2_0
       rect:
         serializedVersion: 2
         x: 256
@@ -109,7 +104,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Questao_0_2
+      name: Questao_2_2
       rect:
         serializedVersion: 2
         x: 0
@@ -122,7 +117,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Questao_0_3
+      name: Questao_2_3
       rect:
         serializedVersion: 2
         x: 512
@@ -135,7 +130,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Questao_0_4
+      name: Questao_2_4
       rect:
         serializedVersion: 2
         x: 0
@@ -148,7 +143,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Questao_0_5
+      name: Questao_2_5
       rect:
         serializedVersion: 2
         x: 512
