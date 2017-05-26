@@ -8,7 +8,7 @@ namespace BlocoScripts {
 	public class BlocoTriggerCreator : MonoBehaviour {
 
 		public GameController gameController;
-		private int contadorResposta = 8; //Quantidade de blocos para aparecer o Bloco de Respostas
+		private int contadorResposta = 4; //Quantidade de blocos para aparecer o Bloco de Respostas
 
 		void OnTriggerEnter2D( Collider2D other ) {
 			
