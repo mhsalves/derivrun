@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Componentes;
 
 namespace Controladores {
 
@@ -28,7 +29,7 @@ namespace Controladores {
 
 		public int aproveitamentoAcertos {
 			get { 
-				return (int)(qtdAcertos / GameController.k_MaxQuestions) * 100;
+				return (int)(qtdAcertos / HUDContadores.k_MaxQuestions) * 100;
 			}
 		}
 
@@ -63,7 +64,7 @@ namespace Controladores {
 
 		public string GetAcertosLabel() {
 			var sep = " de ";
-			return qtdAcertos + sep + GameController.k_MaxQuestions;
+			return qtdAcertos + sep + HUDContadores.k_MaxQuestions;
 		}
 	}
 

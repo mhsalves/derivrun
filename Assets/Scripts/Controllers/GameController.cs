@@ -19,20 +19,12 @@ namespace Controladores {
 		private LifeController c_LifeController;
 		private ResultsController c_ResultsController;
 
-		public readonly static int k_MaxQuestions = 10;
-		public readonly static int k_minQuestions = 1;
-
-		[SerializeField] private Text m_Question;
-		[SerializeField] private Text m_Score;
-		[SerializeField] private Text m_Lifes;
-
-		private int numQuestion = GameController.k_minQuestions;
-		private int numScore = 0;
+		[SerializeField] private HUDContadores m_HUDContadores;
 
 		[SerializeField] private BlocoSpawnBehaviour m_SpawnIsolado;
 
-		public CameraMoveBehaviour m_CameraMoveBehaviour;
-		public PlayerBehaviour m_Player;
+		private CameraMoveBehaviour m_CameraMoveBehaviour;
+		private PlayerBehaviour m_Player;
 		[SerializeField] private ContadorInicial m_ContadorInicial;
 
 		public int numBlocos = 0;
@@ -42,6 +34,8 @@ namespace Controladores {
 			this.c_LifeController = GameObject.FindGameObjectWithTag ("LifeController").GetComponent<LifeController> ();
 			this.c_ResultsController = GameObject.FindGameObjectWithTag ("ResultsController").GetComponent<ResultsController> ();
 
+			this.m_Player = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerBehaviour> ();
+			this.m_CameraMoveBehaviour = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<CameraMoveBehaviour> ();
 		}
 
 		// Use this for initialization
@@ -49,13 +43,9 @@ namespace Controladores {
 
 			this.c_LifeController.IniciarCom (this.c_LifeController.GetVidas ());
 			this.AtualizarResults ();
-			var questaoAtual = this.m_EquationsResources.SelecionarDataAleatoria ();
 
-			this.m_EquationsArea.Carregar (questaoAtual);
-
-			this.m_Question.text = "" + numQuestion;
-			this.m_Score.text = "" + numScore;
-			this.m_Lifes.text = "" + this.c_LifeController.GetVidas () ?? "1";
+			this.CarregarQuestaoNova ();
+			this.m_HUDContadores.LoadValues (this.c_LifeController.GetVidas ());
 
 			this.m_SpawnIsolado.InvocarLimpo ();
 			this.numBlocos = m_SpawnIsolado.childAhead - 1;
@@ -73,44 +63,33 @@ namespace Controladores {
 
 		}
 
+		private void CarregarQuestaoNova() {
+
+			var questaoAtual = this.m_EquationsResources.SelecionarDataAleatoria ();
+			this.m_EquationsArea.Carregar (questaoAtual);
+
+		}
+
 		public void ValidarResposta( int indiceResposta ){
 		
 			var r = this.m_EquationsArea.VerificarCorreto (indiceResposta);
 
 			if (r) {
-				this.Pontuar ();
+				this.m_HUDContadores.Pontuar ();
 				//TODO animar correto
 			} else {
 				this.PerderVida ();
 				//TODO animar errado
 			}
 
-			var finish = this.NextQuestion ();
-			if (finish) {
+			var pararAgora = this.m_HUDContadores.ProximaQuestao ();
+			if (pararAgora) {
 				this.AtualizarResults ();
 				this.EndGame ();
-			}
-
-		}
-
-		private void Pontuar() {
-			numScore++;
-			m_Score.text = "" + numScore;
-		}
-
-		private bool NextQuestion() {
-		
-			numQuestion++;
-			if (numQuestion > k_MaxQuestions) {
-				return true; //Acabou !
 			} else {
-				m_Question.text = "" + numQuestion;
-
-				var data = m_EquationsResources.SelecionarDataAleatoria ();
-				m_EquationsArea.Carregar (data);
-
-				return false; //Ainda não acabou
+				this.CarregarQuestaoNova ();
 			}
+
 		}
 
 		private void PerderVida(){
@@ -122,8 +101,7 @@ namespace Controladores {
 				this.EndGame ();
 
 			} else {
-				m_Lifes.text = "" + this.c_LifeController.GetVidasCorrente ();
-
+				this.m_HUDContadores.LoadValues (c_LifeController.GetVidasCorrente ());
 			}
 
 		}
@@ -131,7 +109,7 @@ namespace Controladores {
 		private void AtualizarResults() {
 			c_ResultsController.vidasTotais = c_LifeController.GetVidas ();
 			c_ResultsController.vidasCorrente = c_LifeController.GetVidasCorrente ();
-			c_ResultsController.qtdAcertos = numScore;
+			c_ResultsController.qtdAcertos = this.m_HUDContadores.GetAcertos ();
 		}
 
 		public void PauseGame() {
