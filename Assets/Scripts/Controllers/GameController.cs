@@ -79,8 +79,10 @@ namespace Controladores {
 
 			if (r) {
 				this.Pontuar ();
+				//TODO animar correto
 			} else {
 				this.PerderVida ();
+				//TODO animar errado
 			}
 
 			var finish = this.NextQuestion ();

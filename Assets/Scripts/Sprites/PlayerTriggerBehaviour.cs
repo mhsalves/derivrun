@@ -20,14 +20,25 @@ namespace PlayerScripts {
 
 			if ( other.tag == "OpcaoObstaculo") {
 
-				var ob = other.GetComponent<OpcaoBehaviour> ();
-				ob.Validar ();
+				if (m_PlayerBehavior.GetPlayerAnswerBehaviour ().GetPermissao ()) {
+					m_PlayerBehavior.GetPlayerAnswerBehaviour ().PegarOpcao ();
+
+					var ob = other.GetComponent<OpcaoBehaviour> ();
+					ob.Validar ();
+
+				}
+
 
 			}
 
 			if ( other.tag == "AjusteDePosicionamento" ) {
 				m_PlayerBehavior.AcionarPosicionamento ();
 				print ("Posicao ajustada");
+			}
+
+			if (other.tag == "LiberacaoOpcao") {
+				m_PlayerBehavior.GetPlayerAnswerBehaviour ().LargarOpcao ();
+				print ("Liberação Opção");
 			}
 
 		}

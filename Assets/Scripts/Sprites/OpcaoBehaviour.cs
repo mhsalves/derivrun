@@ -24,8 +24,12 @@ namespace ObjetoScripts {
 
 		public void Validar() {
 			this.m_GameController.ValidarResposta ((int) m_Tipo);
+			AutoDestruir ();
 		}
 
+		private void AutoDestruir() {
+			Destroy (gameObject);
+		}
 	}
 
 }

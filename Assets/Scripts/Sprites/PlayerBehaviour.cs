@@ -34,6 +34,14 @@ namespace PlayerScripts {
 		private bool m_MoverParaPosicao = false;
 		private Animator m_Animator;
 
+		public PlayerAnswerBevaviour GetPlayerAnswerBehaviour() {
+			return GetComponent<PlayerAnswerBevaviour> ();
+		}
+
+		public PlayerUserControlBehaviour GetPlayerUserControlBehaviour() {
+			return GetComponent<PlayerUserControlBehaviour> ();
+		}
+
 		private void Awake() {
 
 			this.mSideLeft = transform.Find ("SideLeft");
@@ -118,13 +126,13 @@ namespace PlayerScripts {
 			if (direcao != Direcao.FRENTE && direcao != Direcao.NENHUM) {
 
 				var dir = (int)direcao;
-				var newSX = Mathf.Abs (this.transform.localScale.x) * dir;
-				var toScale = new Vector3 (newSX, this.transform.localScale.y);
+				//var newSX = Mathf.Abs (this.transform.localScale.x) * dir;
+				//var toScale = new Vector3 (newSX, this.transform.localScale.y);
 
 				if ((direcao == Direcao.DIREITA && canMoveRight) || (direcao == Direcao.ESQUERDA && canMoveLeft))
 					this.transform.Translate (m_Velocidade * Time.deltaTime * dir, 0f, 0f);
 				
-				this.m_Corpo.localScale = toScale;
+				//this.m_Corpo.localScale = toScale;
 
 			} else if (direcao == Direcao.FRENTE) {
 
