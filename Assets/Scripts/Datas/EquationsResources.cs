@@ -15,6 +15,19 @@ namespace InformacoesEstaticas {
 			public Resposta resposta1;
 			public Resposta resposta2;
 			public Resposta resposta3;
+
+			public List<Resposta> respostas {
+				get { 
+					var l = new List<Resposta> ();
+					l.Add (resposta0);
+					l.Add (resposta1);
+					l.Add (resposta2);
+					l.Add (resposta3);
+
+					return l;
+				}
+			}
+
 		}
 
 		[System.Serializable]
@@ -25,9 +38,13 @@ namespace InformacoesEstaticas {
 			
 		public List<Data> dados;
 
-		public Data SelecionarDataAleatoria() {
+		public Data SelecionarDataAleatoria( bool shuffle = false ) {
 			int i = RandomUtils.RandomInt (0, dados.Count);
-			return dados [i];
+			var item = dados [i];
+
+			if (shuffle) ListUtils.Shuffle (item.respostas);
+
+			return item;
 		}
 
 

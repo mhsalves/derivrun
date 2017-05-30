@@ -11,9 +11,11 @@ using InformacoesEstaticas;
 namespace Controladores {
 
 	public class GameController : MonoBehaviour {
+//
+//		[SerializeField] private EquationsResources m_EquationsResources;
+//		[SerializeField] private EquationsArea m_EquationsArea;
 
-		[SerializeField] private EquationsResources m_EquationsResources;
-		[SerializeField] private EquationsArea m_EquationsArea;
+		[SerializeField] private HUDQuestoes m_HUDQuestoes;
 
 	 	public ScreenController m_ScreenController;
 		private LifeController c_LifeController;
@@ -44,7 +46,6 @@ namespace Controladores {
 			this.c_LifeController.IniciarCom (this.c_LifeController.GetVidas ());
 			this.AtualizarResults ();
 
-			this.CarregarQuestaoNova ();
 			this.m_HUDContadores.LoadValues (this.c_LifeController.GetVidas ());
 
 			this.m_SpawnIsolado.InvocarLimpo ();
@@ -63,16 +64,9 @@ namespace Controladores {
 
 		}
 
-		private void CarregarQuestaoNova() {
-
-			var questaoAtual = this.m_EquationsResources.SelecionarDataAleatoria ();
-			this.m_EquationsArea.Carregar (questaoAtual);
-
-		}
-
 		public void ValidarResposta( int indiceResposta ){
 		
-			var r = this.m_EquationsArea.VerificarCorreto (indiceResposta);
+			var r = this.m_HUDQuestoes.VerificarAcerto (indiceResposta);
 
 			if (r) {
 				this.m_HUDContadores.Pontuar ();
@@ -87,7 +81,7 @@ namespace Controladores {
 				this.AtualizarResults ();
 				this.EndGame ();
 			} else {
-				this.CarregarQuestaoNova ();
+				this.m_HUDQuestoes.LoadNovaQuestao ();
 			}
 
 		}
