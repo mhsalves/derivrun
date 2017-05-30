@@ -27,6 +27,10 @@ namespace Controladores {
 		public void AbrirGuide() {
 			SceneManager.LoadScene (4);
 		}
+
+		public void AbrirConfig() {
+			SceneManager.LoadScene (5);
+		}
 	}
 
 }

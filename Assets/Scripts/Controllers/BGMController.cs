@@ -31,6 +31,13 @@ namespace Controladores {
 			this.m_AudioSource.mute = mutar;
 		}
 
+		public float GetVolume () {
+			return m_AudioSource.volume;
+		}
+
+		public bool GetMute () {
+			return m_AudioSource.mute;
+		}
 
 	}
 
