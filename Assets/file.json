@@ -1,0 +1,63 @@
+{
+  "items": 
+  [  
+    {
+      "enunciado" : true,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{1}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 1
+    }, {
+      "correta" : false,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{2}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 1,
+      "numero_resposta" : 1
+    }, {
+      "correta" : true,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{3}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 1,
+      "numero_resposta" : 2
+    }, {
+      "correta" : false,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{4}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 1,
+      "numero_resposta" : 3
+    }, {
+      "correta" : false,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{5}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 1,
+      "numero_resposta" : 4
+    }, 
+    {
+      "enunciado" : true,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{6}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 2
+    }, {
+      "correta" : false,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{7}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 2,
+      "numero_resposta" : 1
+    }, {
+      "correta" : false,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{8}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 2,
+      "numero_resposta" : 2
+    }, {
+      "correta" : true,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{9}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 2,
+      "numero_resposta" : 3
+    }, {
+      "correta" : false,
+      "enunciado" : false,
+      "formula" : "\\displaystyle\\int_{-\\infty}^{\\infty}e^{-x^{10}}\\;dx=\\sqrt{\\pi}",
+      "numero_questao" : 2,
+      "numero_resposta" : 4
+    } 
+  ]
+}

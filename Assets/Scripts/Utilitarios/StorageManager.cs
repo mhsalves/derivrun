@@ -10,6 +10,7 @@ namespace Managers {
 	public class StorageManager : MonoBehaviour {
 
 		public readonly static string PATH_Equations = Application.persistentDataPath + "/equations/";
+		public readonly static string PATH_Assets = Application.dataPath + "/";
 
 		public static void SaveDownloadedEquation(WWW objSERVER, Formula formula) 
 		{
@@ -48,6 +49,22 @@ namespace Managers {
 
 			return new Question (e, r1, r2, r3, r4, correta);
 
+		}
+
+
+		public static List<Formula> LoadJSON () {
+			string filename = "file.json";
+			string filePath = PATH_Assets + filename;
+
+			if (File.Exists (filePath)) {
+				string[] lines = File.ReadAllLines (filePath);
+				string text = string.Join ("", lines);
+
+				FormulaJSON.List list = FormulaJSON.List.CreateFromJSON (text);
+				return list.GetListFormula ();
+			}
+
+			return new List<Formula> ();
 		}
 
 	}

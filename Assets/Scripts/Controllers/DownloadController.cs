@@ -4,21 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using Managers;
 using Models;
+using Controladores;
 
 namespace DownloadManager {
 	
 	public class DownloadController : MonoBehaviour {
 		
 		[SerializeField] private DownloadFeedback m_DownloadFeedback;
+		[SerializeField] private InitialController m_InitialController;
 
 		public List<Formula> formulas = new List<Formula>();
 
 		private DownloadManager m_DownloadManager;
 
 		void Start() {
-
-			//TODO: Selecionar formulas aqui.
-			this.formulas = GetBaseList();
+			
+			this.formulas = StorageManager.LoadJSON ();
 
 			this.m_DownloadFeedback.Init (formulas.Count);
 
@@ -37,6 +38,7 @@ namespace DownloadManager {
 					IniciarDownloads ();
 				} else {
 					print ("Download completo");
+					m_InitialController.Ativar ();
 				}
 			};
 			DownloadManager.Download (formula.GetUrl(), callback);
@@ -44,7 +46,7 @@ namespace DownloadManager {
 		}
 
 		public static List<Formula> GetBaseList() {
-			
+			StorageManager.LoadJSON ();
 			List<Formula> list = new List<Formula> ();
 
 			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}"));
