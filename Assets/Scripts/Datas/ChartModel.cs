@@ -10,9 +10,12 @@ public class ChartModel {
 	static readonly string p_Size = "&chs=";
 	static readonly string p_Formula = "chl=";
 
+	public static readonly int v_SizeWidth = 512;
+	public static readonly int v_SizeHeight = 128;
+
 	string m_ImageTypeValue = "tx";
 	string m_BackgroundValue = "bg,s,0000EF00";
-	string m_SizeValue = "512x128";
+	string m_SizeValue = string.Format("{0}x{1}", ChartModel.v_SizeWidth, ChartModel.v_SizeHeight);
 	string m_Formula;
 
 	public ChartModel(string formula) {

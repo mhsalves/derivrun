@@ -67,16 +67,18 @@ namespace Models {
 			return Formula.GetCorrectFileName (numero_questao);
 		}
 
+		private static readonly string ExtensionImage = ".png";
+
 		public static string GetFileName(int numero_questao) {
-			return string.Format("enum_{0}", numero_questao);
+			return string.Format("enum_{0}{1}", numero_questao, ExtensionImage);
+		}
+
+		public static string GetFileName(int numero_questao, int numero_resposta) {
+			return string.Format("resp_{0}_{1}{2}", numero_questao, numero_resposta, ExtensionImage);
 		}
 
 		public static string GetCorrectFileName(int numero_questao) {
 			return string.Format("correct_{0}", numero_questao);
-		}
-
-		public static string GetFileName(int numero_questao, int numero_resposta) {
-			return string.Format("resp_{0}_{1}", numero_questao, numero_resposta);
 		}
 
 	}

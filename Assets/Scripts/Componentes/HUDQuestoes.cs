@@ -3,32 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using InformacoesEstaticas;
+using Managers;
 
 namespace Componentes {
 
 	public class HUDQuestoes : MonoBehaviour {
-
-		[SerializeField] private EquationsResources m_EquationsResources;
-
+		
 		[SerializeField] private Image m_Pergunta;
 		[SerializeField] private Image m_Resposta0;
 		[SerializeField] private Image m_Resposta1;
 		[SerializeField] private Image m_Resposta2;
 		[SerializeField] private Image m_Resposta3;
 
-		private EquationsResources.Data _D;
-		private EquationsResources.Data m_Data {
+		private Models.Question _Question;
+		private Models.Question m_Question {
 			set { 
-				_D = value;
-				m_Pergunta.sprite = value.pergunta;
-				m_Resposta0.sprite = value.resposta0.sprite;
-				m_Resposta1.sprite = value.resposta1.sprite;
-				m_Resposta2.sprite = value.resposta2.sprite;
-				m_Resposta3.sprite = value.resposta3.sprite;
+				_Question = value;
+				m_Pergunta.sprite = value.enunciado;
+				m_Resposta0.sprite = value.resposta_1.sprite;
+				m_Resposta1.sprite = value.resposta_2.sprite;
+				m_Resposta2.sprite = value.resposta_3.sprite;
+				m_Resposta3.sprite = value.resposta_4.sprite;
 			}
-			get { 
-				return _D;
-			}
+			get { return _Question; }
 		}
 
 		void Awake () {
@@ -39,12 +36,11 @@ namespace Componentes {
 		}
 
 		public void LoadNovaQuestao() {
-			m_Data = m_EquationsResources.SelecionarDataAleatoria (true);
-
+			m_Question = StorageManager.ReadEquation (1);
 		}
 
 		public bool VerificarAcerto( int indice ) {
-			return m_Data.respostas [indice].correta;
+			return m_Question.respostas [indice].is_correta;
 		}
 
 

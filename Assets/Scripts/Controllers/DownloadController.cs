@@ -12,7 +12,6 @@ namespace DownloadManager {
 		[SerializeField] private DownloadFeedback m_DownloadFeedback;
 
 		public List<Formula> formulas = new List<Formula>();
-		public List<Texture> textures = new List<Texture>();
 
 		private DownloadManager m_DownloadManager;
 
@@ -32,7 +31,6 @@ namespace DownloadManager {
 			Debug.Log (formula.GetUrl());
 
 			DownloadManager.DownloadCallback callback = (www) => {
-				textures.Add (www.texture);
 				StorageManager.SaveDownloadedEquation(www, formula);
 
 				if (!m_DownloadFeedback.Somar()) {
@@ -51,8 +49,8 @@ namespace DownloadManager {
 
 			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}"));
 			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}", 1));
-			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}", 2, true));
-			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}", 3));
+			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}", 2));
+			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}", 3, true));
 			list.Add (new Formula (1, @"\displaystyle\int_{-\infty}^{\infty}e^{-x^{2}}\;dx=\sqrt{\pi}", 4));
 
 			return list;

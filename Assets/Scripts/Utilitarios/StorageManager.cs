@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Models;
+using InformacoesEstaticas;
 
 namespace Managers {
 	
@@ -15,9 +16,9 @@ namespace Managers {
 			if (!Directory.Exists(PATH_Equations)) 
 				Directory.CreateDirectory(PATH_Equations);
 
-			byte[] bytes = objSERVER.bytes;
+			byte[] bytes = objSERVER.texture.EncodeToPNG();
 
-			File.WriteAllBytes(PATH_Equations + formula.GetFileName() , bytes);
+			File.WriteAllBytes(PATH_Equations + formula.GetFileName(), bytes);
 
 			if (formula.IsCorreta()) {
 				SaveFileEquationData (formula);
@@ -33,8 +34,20 @@ namespace Managers {
 			File.WriteAllText (PATH_Equations + formula.GetCorrectFileName (), text);
 		}
 
-		public static void ReadEquations(int number) {
-			
+		public static Question ReadEquation (int number) {
+
+			print (PATH_Equations + Formula.GetFileName (number));
+
+			byte[] e = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number));
+			byte[] r1 = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number, 1));
+			byte[] r2 = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number, 2));
+			byte[] r3 = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number, 3));
+			byte[] r4 = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number, 4));
+
+			string correta = File.ReadAllText (PATH_Equations + Formula.GetCorrectFileName (number));
+
+			return new Question (e, r1, r2, r3, r4, correta);
+
 		}
 
 	}
