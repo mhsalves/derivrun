@@ -36,7 +36,7 @@ namespace Componentes {
 		}
 
 		public void LoadNovaQuestao() {
-			m_Question = StorageManager.ReadEquation (1);
+			m_Question = StorageManager.ReadEquation (0);
 		}
 
 		public bool VerificarAcerto( int indice ) {

@@ -64,7 +64,7 @@ namespace DownloadManager {
 		{
 			Downloadable toDownload = queue.Dequeue ();
 			yield return StartCoroutine ("OnDownload", toDownload);
-			Debug.Log ("downloaded: " + toDownload.url);
+//			Debug.Log ("downloaded: " + toDownload.url);
 			toDownload.fn (dHandlerTexture);
 		}
 

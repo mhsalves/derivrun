@@ -11,7 +11,6 @@ namespace Managers {
 	public class StorageManager : MonoBehaviour {
 
 		public readonly static string PATH_Equations = Application.persistentDataPath + "/equations/";
-		public readonly static string PATH_Assets = Application.dataPath + "/";
 
 		public static void SaveDownloadedEquation(DownloadHandlerTexture textD, Formula formula) 
 		{
@@ -54,18 +53,19 @@ namespace Managers {
 
 
 		public static List<Formula> LoadJSON () {
-			string filename = "file.json";
-			string filePath = PATH_Assets + filename;
+			string filename = "formulas";
 
-			if (File.Exists (filePath)) {
-				string[] lines = File.ReadAllLines (filePath);
-				string text = string.Join ("", lines);
+			string text = LoadResourceTextfile (filename);
 
-				FormulaJSON.List list = FormulaJSON.List.CreateFromJSON (text);
-				return list.GetListFormula ();
-			}
+			FormulaJSON.List list = FormulaJSON.List.CreateFromJSON (text);
+			return list.GetListFormula ();
 
-			return new List<Formula> ();
+		}
+
+		public static string LoadResourceTextfile(string path)
+		{
+			TextAsset targetFile = Resources.Load<TextAsset>(path);
+			return targetFile.text;
 		}
 
 	}

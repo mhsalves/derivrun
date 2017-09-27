@@ -23,7 +23,7 @@ public class ChartModel {
 	}
 
 	public string GetUrl() {
-		return url_Chart + p_Formula + m_Formula + p_ImageType + m_ImageTypeValue + p_Background + m_BackgroundValue + p_Size + m_SizeValue;
+		return url_Chart + p_Formula + WWW.EscapeURL(m_Formula) + p_ImageType + m_ImageTypeValue + p_Background + m_BackgroundValue + p_Size + m_SizeValue;
 	}
 
 }
