@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using Models;
 using InformacoesEstaticas;
+using UnityEngine.Networking;
 
 namespace Managers {
 	
@@ -12,12 +13,12 @@ namespace Managers {
 		public readonly static string PATH_Equations = Application.persistentDataPath + "/equations/";
 		public readonly static string PATH_Assets = Application.dataPath + "/";
 
-		public static void SaveDownloadedEquation(WWW objSERVER, Formula formula) 
+		public static void SaveDownloadedEquation(DownloadHandlerTexture textD, Formula formula) 
 		{
 			if (!Directory.Exists(PATH_Equations)) 
 				Directory.CreateDirectory(PATH_Equations);
-
-			byte[] bytes = objSERVER.texture.EncodeToPNG();
+			
+			byte[] bytes = textD.data;
 
 			File.WriteAllBytes(PATH_Equations + formula.GetFileName(), bytes);
 
@@ -37,7 +38,7 @@ namespace Managers {
 
 		public static Question ReadEquation (int number) {
 
-			print (PATH_Equations + Formula.GetFileName (number));
+			//print (PATH_Equations + Formula.GetFileName (number));
 
 			byte[] e = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number));
 			byte[] r1 = File.ReadAllBytes(PATH_Equations + Formula.GetFileName (number, 1));

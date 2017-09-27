@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.Networking;
 
 namespace DownloadManager {
 
@@ -20,9 +21,10 @@ namespace DownloadManager {
 			}
 		}
 
-		private WWW wwwData;
+		private UnityWebRequest wwwData;
+		private DownloadHandlerTexture dHandlerTexture;
 
-		public delegate void DownloadCallback (WWW wwwData);
+		public delegate void DownloadCallback (DownloadHandlerTexture wwwData);
 
 		private static DownloadManager instance = null;
 		private static Queue<Downloadable> queue;
@@ -52,8 +54,10 @@ namespace DownloadManager {
 
 		private IEnumerator OnDownload (Downloadable toDownload)
 		{
-			wwwData = new WWW (toDownload.url);
-			yield return wwwData;
+			dHandlerTexture = new DownloadHandlerTexture ();
+			wwwData = UnityWebRequest.Get (toDownload.url);
+			wwwData.downloadHandler = dHandlerTexture;
+			yield return wwwData.Send ();
 		}
 
 		private IEnumerator StartDownload ()
@@ -61,7 +65,7 @@ namespace DownloadManager {
 			Downloadable toDownload = queue.Dequeue ();
 			yield return StartCoroutine ("OnDownload", toDownload);
 			Debug.Log ("downloaded: " + toDownload.url);
-			toDownload.fn (wwwData);
+			toDownload.fn (dHandlerTexture);
 		}
 
 		public static void Download (string sURL, DownloadCallback fn)
