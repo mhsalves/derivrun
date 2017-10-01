@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 using InformacoesEstaticas;
 using UnityEngine.Networking;
-using ComponentModels;
 
 namespace Managers {
 	
@@ -32,10 +31,8 @@ namespace Managers {
 			File.WriteAllText (PATH_Equations + dItem.filenameCorreta, text);
 		}
 
-		public static QuestionModel ReadEquation (int id) {
-
-			//print (PATH_Equations + Formula.GetFileName (number));
-
+		public static QuestionInterface ReadEquation (int id) {
+			
 			byte[] e = File.ReadAllBytes(PATH_Equations + Question.GetEnunciadoFileName(id));
 			byte[] r1 = File.ReadAllBytes(PATH_Equations + Question.GetRespostaFileName(id, 0));
 			byte[] r2 = File.ReadAllBytes(PATH_Equations + Question.GetRespostaFileName(id, 1));
@@ -44,7 +41,7 @@ namespace Managers {
 
 			string correta = File.ReadAllText (PATH_Equations + Question.GetCorretaFileName(id));
 
-			return new QuestionModel (e, r1, r2, r3, r4, correta);
+			return new QuestionInterface (e, r1, r2, r3, r4, correta);
 
 		}
 

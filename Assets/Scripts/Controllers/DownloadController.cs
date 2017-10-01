@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Managers;
-using ComponentModels;
 using Controladores;
 
 namespace DownloadManager {
@@ -42,8 +41,8 @@ namespace DownloadManager {
 				if (!m_DownloadFeedback.Somar()) {
 					IniciarDownloads ();
 				} else {
-//					Debug.Log ("Download completo");
-//					m_InitialController.Ativar ();
+					Debug.Log ("Download completo");
+					m_InitialController.Ativar ();
 				}
 			};
 			DownloadManager.Download (downloadItemAtual.chartModel.GetUrl(), callback);

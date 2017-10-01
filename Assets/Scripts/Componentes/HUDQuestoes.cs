@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using InformacoesEstaticas;
-using ComponentModels;
 using Managers;
 
 namespace Componentes {
@@ -16,8 +15,8 @@ namespace Componentes {
 		[SerializeField] private Image m_Resposta2;
 		[SerializeField] private Image m_Resposta3;
 
-		private QuestionModel _Question;
-		private QuestionModel m_Question {
+		private QuestionInterface _Question;
+		private QuestionInterface m_Question {
 			set { 
 				_Question = value;
 				m_Pergunta.sprite = value.enunciado;
@@ -37,7 +36,7 @@ namespace Componentes {
 		}
 
 		public void LoadNovaQuestao() {
-			m_Question = StorageManager.ReadEquation (0);
+			m_Question = StorageManager.ReadEquation (1);
 		}
 
 		public bool VerificarAcerto( int indice ) {
