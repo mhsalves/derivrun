@@ -19,6 +19,8 @@ namespace DownloadManager {
 
 		void Start() {
 			this.questions = StorageManager.LoadJSON ();
+			StorageManager.SaveFileQuantity (this.questions.Count);
+
 			foreach (Question question in this.questions) {
 				this.downloadItems.AddRange (question.GetDownloadItemList ());
 			}

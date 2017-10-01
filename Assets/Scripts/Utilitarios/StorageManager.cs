@@ -10,6 +10,7 @@ namespace Managers {
 	public class StorageManager : MonoBehaviour {
 
 		public readonly static string PATH_Equations = Application.persistentDataPath + "/equations/";
+		public readonly static string FILENAME_Quantity = "quantity";
 
 		public static void SaveDownloadedEquation(DownloadHandlerTexture textD, string filename) 
 		{
@@ -29,6 +30,22 @@ namespace Managers {
 			string text = string.Format("{0}", dItem.numero_resposta);
 
 			File.WriteAllText (PATH_Equations + dItem.filenameCorreta, text);
+		}
+
+		public static void SaveFileQuantity(int quantity) {
+			if (!Directory.Exists(PATH_Equations)) 
+				Directory.CreateDirectory(PATH_Equations);
+			
+			string text = string.Format("{0}", quantity);
+
+			File.WriteAllText (PATH_Equations + FILENAME_Quantity, text);
+		}
+
+		public static int ReadQuantity () {
+			string quantity_string = File.ReadAllText (PATH_Equations + FILENAME_Quantity);
+			int quantity = int.Parse(quantity_string);
+
+			return quantity;
 		}
 
 		public static QuestionInterface ReadEquation (int id) {

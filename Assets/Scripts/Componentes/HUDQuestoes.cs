@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using InformacoesEstaticas;
 using Managers;
+using Utilitarios;
 
 namespace Componentes {
 
@@ -36,7 +37,11 @@ namespace Componentes {
 		}
 
 		public void LoadNovaQuestao() {
-			m_Question = StorageManager.ReadEquation (1);
+			print ("Load NEW");
+			int max = StorageManager.ReadQuantity ();
+			int value = RandomUtils.RandomInt (0, max);
+			print ("Para: " + value);
+			m_Question = StorageManager.ReadEquation (value);
 		}
 
 		public bool VerificarAcerto( int indice ) {
