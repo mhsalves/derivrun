@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEditor;
 using InformacoesEstaticas;
 using UnityEngine.Networking;
 
@@ -74,8 +73,6 @@ namespace Managers {
 		public static void ChangeConfigData () {
 			string filename = "configdata.json";
 			File.WriteAllText(PATH_Resources + filename, "0");
-			AssetDatabase.SaveAssets();
-			AssetDatabase.Refresh();
 		}
 
 		public static bool CheckFileEquation(string filename) {
