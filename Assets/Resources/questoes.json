@@ -1,0 +1,22 @@
+﻿{
+  "items": 
+  [ 
+	{
+		"id": 0,
+		"enunciado": "y=x^{2}-3x",
+		"resposta_1": "y'=2x-3",
+		"resposta_2": "y'=2x+3",
+		"resposta_3": "y'=x-3",
+		"resposta_4": "y'=x+3",
+		"respostaCorreta": 0
+	}, {
+		"id": 1,
+		"enunciado": "y=x^{3}-3x",
+		"resposta_1": "y'=3x+3",
+		"resposta_2": "y'=3x-3",
+		"resposta_3": "y'=x-4",
+		"resposta_4": "y'=x+4",
+		"respostaCorreta": 1
+	}	
+  ]
+}

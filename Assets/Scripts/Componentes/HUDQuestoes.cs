@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using InformacoesEstaticas;
+using ComponentModels;
 using Managers;
 
 namespace Componentes {
@@ -15,8 +16,8 @@ namespace Componentes {
 		[SerializeField] private Image m_Resposta2;
 		[SerializeField] private Image m_Resposta3;
 
-		private Models.Question _Question;
-		private Models.Question m_Question {
+		private QuestionModel _Question;
+		private QuestionModel m_Question {
 			set { 
 				_Question = value;
 				m_Pergunta.sprite = value.enunciado;
