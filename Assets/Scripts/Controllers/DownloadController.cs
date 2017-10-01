@@ -34,21 +34,30 @@ namespace DownloadManager {
 
 			Question.DownloadItem downloadItemAtual = this.downloadItems [this.m_DownloadFeedback.counter];
 
-			DownloadManager.DownloadCallback callback = (www) => {
-				StorageManager.SaveDownloadedEquation(www, downloadItemAtual.filename);
-				if (downloadItemAtual.correta) {
-					StorageManager.SaveFileEquationData(downloadItemAtual);
-				}
-
-				if (!m_DownloadFeedback.Somar()) {
+			if (StorageManager.CheckFileEquation (downloadItemAtual.filename) 
+				&& !StorageManager.ReadConfigData()) {
+				if (!m_DownloadFeedback.Pular ()) {
 					IniciarDownloads ();
 				} else {
-					Debug.Log ("Download completo");
 					m_InitialController.Ativar ();
+					StorageManager.ChangeConfigData ();
 				}
-			};
-			DownloadManager.Download (downloadItemAtual.chartModel.GetUrl(), callback);
+			} else {
+				DownloadManager.DownloadCallback callback = (www) => {
+					StorageManager.SaveDownloadedEquation (www, downloadItemAtual.filename);
+					if (downloadItemAtual.correta) {
+						StorageManager.SaveFileEquationData (downloadItemAtual);
+					}
 
+					if (!m_DownloadFeedback.Somar ()) {
+						IniciarDownloads ();
+					} else {
+						m_InitialController.Ativar ();
+						StorageManager.ChangeConfigData ();
+					}
+				};
+				DownloadManager.Download (downloadItemAtual.chartModel.GetUrl (), callback);
+			}
 		}
 
 	}

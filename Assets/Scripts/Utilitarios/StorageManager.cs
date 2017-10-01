@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 using InformacoesEstaticas;
 using UnityEngine.Networking;
 
@@ -10,6 +11,7 @@ namespace Managers {
 	public class StorageManager : MonoBehaviour {
 
 		public readonly static string PATH_Equations = Application.persistentDataPath + "/equations/";
+		public readonly static string PATH_Resources = Application.dataPath +  "/Resources/";
 		public readonly static string FILENAME_Quantity = "quantity";
 
 		public static void SaveDownloadedEquation(DownloadHandlerTexture textD, string filename) 
@@ -60,6 +62,24 @@ namespace Managers {
 
 			return new QuestionInterface (e, r1, r2, r3, r4, correta);
 
+		}
+
+		public static bool ReadConfigData() {
+			string filename = "configdata";
+			string text = LoadResourceTextfile (filename);
+			int flag = int.Parse (text);
+			return (flag == 1);
+		}
+
+		public static void ChangeConfigData () {
+			string filename = "configdata.json";
+			File.WriteAllText(PATH_Resources + filename, "0");
+			AssetDatabase.SaveAssets();
+			AssetDatabase.Refresh();
+		}
+
+		public static bool CheckFileEquation(string filename) {
+			return File.Exists (PATH_Equations + filename);
 		}
 
 		public static List<Question> LoadJSON () {
