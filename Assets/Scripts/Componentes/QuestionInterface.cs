@@ -31,10 +31,10 @@ public class QuestionInterface {
 	public QuestionInterface(byte[] e, byte[] r1, byte[] r2, byte[] r3, byte[] r4, string correta) {
 		
 		this.enunciado = ConvertBytesToSprite (e);
-		this.resposta_1 = new Resposta(ConvertBytesToSprite (r1), (correta == "1"));
-		this.resposta_2 = new Resposta(ConvertBytesToSprite (r2), (correta == "2"));
-		this.resposta_3 = new Resposta(ConvertBytesToSprite (r3), (correta == "3"));
-		this.resposta_4 = new Resposta(ConvertBytesToSprite (r4), (correta == "4"));
+		this.resposta_1 = new Resposta(ConvertBytesToSprite (r1), (correta == "0"));
+		this.resposta_2 = new Resposta(ConvertBytesToSprite (r2), (correta == "1"));
+		this.resposta_3 = new Resposta(ConvertBytesToSprite (r3), (correta == "2"));
+		this.resposta_4 = new Resposta(ConvertBytesToSprite (r4), (correta == "3"));
 
 		this.LoadRespostaList ();
 
