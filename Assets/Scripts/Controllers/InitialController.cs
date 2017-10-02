@@ -14,6 +14,11 @@ namespace Controladores {
 
 		}
 
+		public void Ativar() {
+			gameObject.SetActive (true);
+		}
+
+
 	}
 
 }

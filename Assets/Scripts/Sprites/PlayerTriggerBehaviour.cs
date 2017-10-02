@@ -33,12 +33,12 @@ namespace PlayerScripts {
 
 			if ( other.tag == "AjusteDePosicionamento" ) {
 				m_PlayerBehavior.AcionarPosicionamento ();
-				print ("Posicao ajustada");
+//				print ("Posicao ajustada");
 			}
 
 			if (other.tag == "LiberacaoOpcao") {
 				m_PlayerBehavior.GetPlayerAnswerBehaviour ().LargarOpcao ();
-				print ("Liberação Opção");
+//				print ("Liberação Opção");
 			}
 
 		}
