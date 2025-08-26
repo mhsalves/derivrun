@@ -1,59 +1,156 @@
 fileFormatVersion: 2
 guid: c6a60b9677264494887638534f1fe1c3
-timeCreated: 1494986200
-licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Player_walk_0
-    21300002: Player_walk_1
-    21300004: Player_walk_2
-    21300006: Player_walk_3
-    21300008: Player_jumpside_0
-    21300010: Player_jumpside_1
-    21300012: Player_jumpside_2
-    21300014: Player_power_0
-    21300016: Player_power_1
-    21300018: Player_power_2
-    21300020: Player_power_3
-    21300022: Player_run_0
-    21300024: Player_run_1
-    21300026: Player_run_2
-    21300028: Player_run_3
-    21300030: Player_jumpside_0
-    21300032: Player_jumpside_1
-    21300034: Player_jumpside_2
-    21300036: Player_power_0
-    21300038: Player_power_1
-    21300040: Player_power_2
-    21300042: Player_power_3
-    21300044: Player_wait_0
-    21300046: Player_wait_1
-    21300048: Player_4
-    21300050: Player_jumpside_3
-    21300052: Player_jumpside_4
-    21300054: Player_14
-    21300056: Player_17
-    21300058: Player_0_Run_0
-    21300060: Player_0_Run_1
-    21300062: Player_0_Run_2
-    21300064: Player_0_Run_3
-    21300066: Player_0_4
-    21300068: Player_0_Wait_0
-    21300070: Player_0_Wait_1
-    21300072: Player_0_7
-    21300074: Player_0_8
-    21300076: Player_0_Item_0
-    21300078: Player_0_Item_1
-    21300080: Player_0_Item_2
-    21300082: Player_0_Item_3
-    21300084: Player_0_13
-    21300086: Player_0_15
-    21300088: Player_0_16
-    21300090: Player_0_20
-    21300092: Player_0_21
-    21300094: Player_0_22
-    21300096: Player_0_23
-  serializedVersion: 4
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Player_walk_0
+  - first:
+      213: 21300002
+    second: Player_walk_1
+  - first:
+      213: 21300004
+    second: Player_walk_2
+  - first:
+      213: 21300006
+    second: Player_walk_3
+  - first:
+      213: 21300008
+    second: Player_jumpside_0
+  - first:
+      213: 21300010
+    second: Player_jumpside_1
+  - first:
+      213: 21300012
+    second: Player_jumpside_2
+  - first:
+      213: 21300014
+    second: Player_power_0
+  - first:
+      213: 21300016
+    second: Player_power_1
+  - first:
+      213: 21300018
+    second: Player_power_2
+  - first:
+      213: 21300020
+    second: Player_power_3
+  - first:
+      213: 21300022
+    second: Player_run_0
+  - first:
+      213: 21300024
+    second: Player_run_1
+  - first:
+      213: 21300026
+    second: Player_run_2
+  - first:
+      213: 21300028
+    second: Player_run_3
+  - first:
+      213: 21300030
+    second: Player_jumpside_0
+  - first:
+      213: 21300032
+    second: Player_jumpside_1
+  - first:
+      213: 21300034
+    second: Player_jumpside_2
+  - first:
+      213: 21300036
+    second: Player_power_0
+  - first:
+      213: 21300038
+    second: Player_power_1
+  - first:
+      213: 21300040
+    second: Player_power_2
+  - first:
+      213: 21300042
+    second: Player_power_3
+  - first:
+      213: 21300044
+    second: Player_wait_0
+  - first:
+      213: 21300046
+    second: Player_wait_1
+  - first:
+      213: 21300048
+    second: Player_4
+  - first:
+      213: 21300050
+    second: Player_jumpside_3
+  - first:
+      213: 21300052
+    second: Player_jumpside_4
+  - first:
+      213: 21300054
+    second: Player_14
+  - first:
+      213: 21300056
+    second: Player_17
+  - first:
+      213: 21300058
+    second: Player_0_Run_0
+  - first:
+      213: 21300060
+    second: Player_0_Run_1
+  - first:
+      213: 21300062
+    second: Player_0_Run_2
+  - first:
+      213: 21300064
+    second: Player_0_Run_3
+  - first:
+      213: 21300066
+    second: Player_0_4
+  - first:
+      213: 21300068
+    second: Player_0_Wait_0
+  - first:
+      213: 21300070
+    second: Player_0_Wait_1
+  - first:
+      213: 21300072
+    second: Player_0_7
+  - first:
+      213: 21300074
+    second: Player_0_8
+  - first:
+      213: 21300076
+    second: Player_0_Item_0
+  - first:
+      213: 21300078
+    second: Player_0_Item_1
+  - first:
+      213: 21300080
+    second: Player_0_Item_2
+  - first:
+      213: 21300082
+    second: Player_0_Item_3
+  - first:
+      213: 21300084
+    second: Player_0_13
+  - first:
+      213: 21300086
+    second: Player_0_15
+  - first:
+      213: 21300088
+    second: Player_0_16
+  - first:
+      213: 21300090
+    second: Player_0_20
+  - first:
+      213: 21300092
+    second: Player_0_21
+  - first:
+      213: 21300094
+    second: Player_0_22
+  - first:
+      213: 21300096
+    second: Player_0_23
+  externalObjects: {}
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -61,6 +158,8 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -68,7 +167,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -76,10 +180,13 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
-    mipBias: -1
-    wrapMode: 1
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -88,49 +195,90 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Standalone
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: iPhone
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
     maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -146,7 +294,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a5305410000000000800000000000000
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Run_1
       rect:
@@ -159,7 +315,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c5305410000000000800000000000000
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Run_2
       rect:
@@ -172,7 +336,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e5305410000000000800000000000000
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Run_3
       rect:
@@ -185,7 +357,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 06305410000000000800000000000000
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Wait_0
       rect:
@@ -198,7 +378,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 46305410000000000800000000000000
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Wait_1
       rect:
@@ -211,7 +399,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66305410000000000800000000000000
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Item_0
       rect:
@@ -224,7 +420,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6305410000000000800000000000000
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Item_1
       rect:
@@ -237,7 +441,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e6305410000000000800000000000000
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Item_2
       rect:
@@ -250,7 +462,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 07305410000000000800000000000000
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: Player_0_Item_3
       rect:
@@ -263,9 +483,38 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 27305410000000000800000000000000
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
-  spritePackingTag: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_0_Item_0: 21300076
+      Player_0_Item_1: 21300078
+      Player_0_Item_2: 21300080
+      Player_0_Item_3: 21300082
+      Player_0_Run_0: 21300058
+      Player_0_Run_1: 21300060
+      Player_0_Run_2: 21300062
+      Player_0_Run_3: 21300064
+      Player_0_Wait_0: 21300068
+      Player_0_Wait_1: 21300070
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
